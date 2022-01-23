@@ -73,21 +73,35 @@ install_pkgs() {
 	for pkg_ in "${pkgs[@]}" ; do
 		if ! hash ${pkg_} > /dev/null 2>&1;
 		then
+			apt install ${i} -y > /dev/null 2>&1
 			sp=( "\033[1;91m⬤   " "\033[1;91m⬤  \033[1;92m⬤" "   \033[1;92m⬤" "\033[0m    ")
 
         		for i in "${sp[@]}" ; do
         			echo -ne "\rInstalling $pkg_   ${i}"
-					sleep 1
+				sleep 0.2
 				done
 		fi
 	done
 }
-
-echo -e "${cyan}Installing required pkgs this may take a while . Grab a cup of coffee${reset} \n"
+binary_files() {
+	echo "xfce4-session &" >> ~/.vnc/xstartup
+	cat > $PREFIX/bin/vncstart <<- _EOF_
+	vncserver -kill :1 > /dev/null 2>&1
+	vncserver
+	termux-open vnc://127.0.0.1:5901
+	_EOF_
+	chmod 777 $PREFIX/bin/vncstart
+	echo "vncserver -kill :1" > $PREFIX/bin/vncstop
+	chmod 777 $PREFIX/bin/vncstop
+}
 
 change_theme
 properties
+echo -e "${cyan}Installing required pkgs this may take a while . Grab a cup of coffee${reset}"
 echo "alias ls=\"lsd\"" >> $PREFIX/etc/bash.bashrc
-$SHELL
 termux-reload-settings
 install_pkgs
+clear
+echo -e "${red}Requirements satisfied !${reset}"
+binary_files
+echo -ne "\n${cyan}vncstart${reset}\tto start vncserver\n${cyan}vncstop${reset}\t\tto stop vncserver\n\n"
