@@ -136,10 +136,10 @@ _EOF_
 }
 
 
-tar -xf ./.files/themes.tar ./.files
-tar -xf ./.files/icons.tar ./.files
-mv ./.files/themes $PREFIX/share/
-mv ./.files/icons $PREFIX/shate/
+tar -xf ./.files/themes.tar
+tar -xf ./.files/icons.tar
+mv ./themes $PREFIX/share/
+mv ./icons $PREFIX/shate/
 
 change_theme
 properties
