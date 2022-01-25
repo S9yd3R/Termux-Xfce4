@@ -16,6 +16,11 @@ reset="\033[0m"
 
 
 #functions
+exit_ctrl_C(){
+	echo -e "\n\n\t${red}QUITING${reset}\n\n"
+	exit 0
+}
+
 banner() {
 	cat <<"EOF"
 
@@ -102,7 +107,7 @@ terminal-cursor-blink-rate=600
 }
 
 install_pkgs() {
-	pkgs=(lsd x11-repo xfce4 polybar tigervnc geany qterminal audacious)
+	pkgs=(lsd x11-repo xfce4 polybar tigervnc geany xterm audacious otter-browser)
 	for pkg_ in "${pkgs[@]}" ; do
 		if ! hash ${pkg_} > /dev/null 2>&1;
 		then
@@ -135,6 +140,8 @@ _EOF_
 	chmod 777 $PREFIX/bin/vncstop
 }
 
+trap exit_ctrl_C SIGINT
+
 tar -xf ./.files/themes.tar
 tar -xf ./.files/icons.tar
 mv ./.files/themes $PREFIX/share/
@@ -155,4 +162,4 @@ sleep 2
 clear
 binary_files
 echo -e "${red}Quick Note !${reset}"
-echo -ne "\n${cyan}vncstart${reset}\tto start vncserver\n${cyan}vncstop${reset}\t\tto stop vncserver\n${cyan}vncserver\"
+echo -ne "\n${cyan}vncstart${reset}\tto start vncserver\n${cyan}vncstop${reset}\t\tto stop vncserver\n${cyan}vncserver\n"
