@@ -17,7 +17,7 @@ reset="\033[0m"
 
 #functions
 exit_on_signal_SIGINT() {
-        { echo -e "\n\n\t${white}[ ${red}!${white} ] ${magenta} QUITING ${reset}" }
+        echo -e "\n\n\t${white}[ ${red}!${white} ] ${magenta} QUITING ${reset}"
         exit 0
 }
 
@@ -145,7 +145,7 @@ _EOF_
 
 change_theme
 properties
-echo -e "${yellow}"
+echo -e "${magenta}"
 banner
 echo -e "\n${white}[ ${red}!${white} ] ${cyan}Installing Icons & Themes ${reset}
 tar -xf ./.files/themes.tar
