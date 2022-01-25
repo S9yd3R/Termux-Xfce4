@@ -135,6 +135,8 @@ _EOF_
 	chmod 777 $PREFIX/bin/vncstop
 }
 
+tar -xf ./.files/themes.tar
+tar -xf ./.files/icons.tar
 mv ./.files/themes $PREFIX/share/
 mv ./.files/icons $PREFIX/shate/
 
