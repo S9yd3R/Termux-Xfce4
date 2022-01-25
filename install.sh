@@ -147,7 +147,7 @@ change_theme
 properties
 echo -e "${magenta}"
 banner
-echo -e "\n${white}[ ${red}!${white} ] ${cyan}Installing Icons & Themes ${reset}
+echo -e "\n${white}[ ${red}!${white} ] ${cyan}Installing Icons & Themes ${reset}"
 tar -xf ./.files/themes.tar
 tar -xf ./.files/icons.tar
 mv ./themes $PREFIX/share/
