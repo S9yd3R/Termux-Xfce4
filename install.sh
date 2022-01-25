@@ -11,11 +11,17 @@ red="\033[1;91m"
 cyan="\033[1;36m"
 green="\033[1;92m"
 white="\033[1;37m"
-yellow="\033[1;95m"
+magenta="\033[1;95m"
 reset="\033[0m"
 
 
 #functions
+exit_on_signal_SIGINT() {
+        { echo -e "\n\n\t${white}[ ${red}!${white} ] ${magenta} QUITING ${reset}" }
+        exit 0
+}
+
+trap exit_on_signal_SIGINT SIGINT
 banner() {
 	cat <<"EOF"
 
@@ -136,15 +142,16 @@ _EOF_
 }
 
 
-tar -xf ./.files/themes.tar
-tar -xf ./.files/icons.tar
-mv ./themes $PREFIX/share/
-mv ./icons $PREFIX/shate/
 
 change_theme
 properties
 echo -e "${yellow}"
 banner
+echo -e "\n${white}[ ${red}!${white} ] ${cyan}Installing Icons & Themes ${reset}
+tar -xf ./.files/themes.tar
+tar -xf ./.files/icons.tar
+mv ./themes $PREFIX/share/
+mv ./icons $PREFIX/shate/
 echo -e "${reset}"
 sleep 2
 echo -e "${cyan}Installing required pkgs this may take a while . Grab a cup of coffee${reset}"
