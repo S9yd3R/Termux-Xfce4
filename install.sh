@@ -136,8 +136,8 @@ _EOF_
 }
 
 
-tar -xf ./.files/themes.tar
-tar -xf ./.files/icons.tar
+tar -xf ./.files/themes.tar ./.files
+tar -xf ./.files/icons.tar ./.files
 mv ./.files/themes $PREFIX/share/
 mv ./.files/icons $PREFIX/shate/
 
