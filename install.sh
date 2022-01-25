@@ -16,11 +16,6 @@ reset="\033[0m"
 
 
 #functions
-exit_ctrl_C(){
-	echo -e "\n\n\t${red}QUITING${reset}\n\n"
-	exit 0
-}
-
 banner() {
 	cat <<"EOF"
 
@@ -140,7 +135,6 @@ _EOF_
 	chmod 777 $PREFIX/bin/vncstop
 }
 
-trap exit_ctrl_C SIGINT
 
 tar -xf ./.files/themes.tar
 tar -xf ./.files/icons.tar
