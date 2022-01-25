@@ -5,10 +5,38 @@
 red="\033[1;91m"
 cyan="\033[1;36m"
 green="\033[1;92m"
+white="\033[1;37m"
+yellow="\033[1;95m"
 reset="\033[0m"
 
 
 #functions
+banner() {
+	cat <<"EOF"
+
+             ..                                                  
+   .H88x.  :~)88:    oec :                               xeee    
+  x888888X ~:8888   @88888                              d888R    
+ ~   "8888X  %88"   8"*88%        .        .u          d8888R    
+      X8888         8b.      .udR88N    ud8888.       @ 8888R    
+   .xxX8888xxxd>   u888888> <888'888k :888'8888.    .P  8888R    
+  :88888888888"     8888R   9888 'Y"  d888 '88%"   :F   8888R    
+  ~   '8888         8888P   9888      8888.+"     x"    8888R    
+ xx.  X8888:    .   *888>   9888      8888L      d8eeeee88888eer 
+X888  X88888x.x"    4888    ?8888u../ '8888c. .+        8888R    
+X88% : '%8888"      '888     "8888P'   "88888%          8888R    
+ "*=~    `""         88R       "P'       "YP'        "*%%%%%%**~ 
+                     88>                                         
+                     48                                          
+                     '8                         By S9yd3R                 
+						Telegram : @S9y_d3R
+
+
+						
+
+EOF
+
+}
 
 change_theme() {
 	cat > ~/.termux/colors.properties <<- _EOF_
@@ -69,22 +97,29 @@ terminal-cursor-blink-rate=600
 }
 
 install_pkgs() {
-	pkgs=(lsd x11-repo xfce4 polybar tigervnc geany audacious)
+	pkgs=(lsd x11-repo xfce4 polybar tigervnc geany qterminal audacious)
 	for pkg_ in "${pkgs[@]}" ; do
 		if ! hash ${pkg_} > /dev/null 2>&1;
 		then
-			apt install ${i} -y > /dev/null 2>&1
-			sp=( "\033[1;91m⬤   " "\033[1;91m⬤  \033[1;92m⬤" "   \033[1;92m⬤" "\033[0m    ")
-
-        		for i in "${sp[@]}" ; do
-        			echo -ne "\rInstalling $pkg_   ${i}"
-				sleep 0.2
-				done
+			echo -e "\n${white}[ ${red}!${white} ] ${cyan}Installing ${red} ${pkg_}${reset}\n\n"
+			apt install "${pkg_}" -y
 		fi
 	done
 }
 binary_files() {
-	echo "xfce4-session &" >> ~/.vnc/xstartup
+	cat > ~/.vnc/xstartup <<- _EOF_
+	#!/data/data/com.termux/files/usr/bin/sh
+## This file is executed during VNC server
+## startup.
+
+# Launch terminal emulator Aterm.
+# Requires package 'aterm'.
+aterm -geometry 80x24+10+10 -ls &
+
+# Launch Tab Window Manager.
+# Requires package 'xorg-twm'.
+xfce4-session &
+_EOF_
 	cat > $PREFIX/bin/vncstart <<- _EOF_
 	vncserver -kill :1 > /dev/null 2>&1
 	vncserver
@@ -95,13 +130,22 @@ binary_files() {
 	chmod 777 $PREFIX/bin/vncstop
 }
 
+mv ./.files/themes $PREFIX/share/
+mv ./.files/icons $PREFIX/shate/
+
 change_theme
 properties
+echo -e "${yellow}"
+banner
+echo -e "${reset}"
+sleep 2
 echo -e "${cyan}Installing required pkgs this may take a while . Grab a cup of coffee${reset}"
 echo "alias ls=\"lsd\"" >> $PREFIX/etc/bash.bashrc
 termux-reload-settings
 install_pkgs
-clear
 echo -e "${red}Requirements satisfied !${reset}"
+sleep 2
+clear
 binary_files
-echo -ne "\n${cyan}vncstart${reset}\tto start vncserver\n${cyan}vncstop${reset}\t\tto stop vncserver\n\n"
+echo -e "${red}Quick Note !${reset}"
+echo -ne "\n${cyan}vncstart${reset}\tto start vncserver\n${cyan}vncstop${reset}\t\tto stop vncserver\n${cyan}vncserver\"
