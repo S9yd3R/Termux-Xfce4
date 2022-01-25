@@ -1,4 +1,9 @@
 #!/bin/bash
+
+##Creator  : S9yd3R
+##Telegram : S9y_d3R
+##github   : S9yd3R
+
 #Termux Desktop version :)
 
 #colors
