@@ -1,0 +1,310 @@
+/*********
+ *  NEMO *
+ * *******/
+
+ /*** inactive pane  ***/
+.nemo-inactive-pane .view,
+.nemo-inactive-pane NemoIconView,
+.nemo-inactive-pane NemoIconView .view {
+    background-color: shade(@notebook_color, 0.86);
+    color: alpha(currentColor, 0.55);
+}
+
+.nemo-inactive-pane .view:backdrop,
+.nemo-inactive-pane NemoIconView:backdrop,
+.nemo-inactive-pane NemoIconView .view:backdrop {
+    background-color: shade(@notebook_color, 0.84);
+    color: alpha(currentColor, 0.50);
+}
+
+.nemo-inactive-pane .view:selected,
+.nemo-inactive-pane .nemo-canvas-item:selected {
+    background-color: @theme_unfocused_selected_bg_color;
+    color: @theme_unfocused_selected_fg_color;
+}
+
+.nemo-inactive-pane .expander.view:selected {
+    background-color: @theme_unfocused_selected_bg_color;
+    color: @internal_element_color;
+    border-color: @internal_element_color;
+}
+
+/* desktop icons */
+.Nemo-canvas-item {
+    border-radius: 5px;
+}
+
+.Nemo-desktop.Nemo-canvas-item {
+    color: @theme_selected_fg_color;
+    text-shadow: 1px 1px black;
+}
+
+.Nemo-desktop.Nemo-canvas-item:active {
+    color: @theme_text_color;
+}
+
+.Nemo-desktop.Nemo-canvas-item:selected {
+    color: @theme_selected_fg_color;
+}
+
+.Nemo-desktop.Nemo-canvas-item:active,
+.Nemo-desktop.Nemo-canvas-item:prelight,
+.Nemo-desktop.Nemo-canvas-item:selected {
+    text-shadow: none;
+}
+/*
+.Nemo-desktop.Nemo-canvas-item:selected:backdrop {
+    color: @theme_unfocused_selected_fg_color;
+}*/
+
+/***********/
+NemoLocationEntry.entry {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* For Places Sidebar diskfull indicators */
+
+NemoPlacesTreeView {
+	-NemoPlacesTreeView-disk-full-bg-color: #212121;
+	-NemoPlacesTreeView-disk-full-fg-color: shade(@theme_selected_bg_color, 1.5);
+	-NemoPlacesTreeView-disk-full-bar-width: 2px;
+	-NemoPlacesTreeView-disk-full-bar-radius: 1px;
+	-NemoPlacesTreeView-disk-full-bottom-padding: 1px;
+	-NemoPlacesTreeView-disk-full-max-length: 70px;
+}
+
+NemoPlacesTreeView:selected {
+	-NemoPlacesTreeView-disk-full-bg-color: #1f1f1f;
+	-NemoPlacesTreeView-disk-full-fg-color: @theme_selected_fg_color;
+}
+
+/***/
+NemoWindow .sidebar .view,
+NemoWindow .sidebar GtkScrolledWindow {
+    background-color: alpha(black, 0.03);
+    background-image: url("assets/delorean-dark-bg.png");
+}
+
+NemoWindow .sidebar .frame {
+	border-style: none;
+    border-image: none;
+}
+
+NemoWindow .sidebar .cell:selected:selected,
+NemoWindow .sidebar .cell:selected:selected:focus {
+    background-color: alpha(@theme_selected_fg_color, 0.04);
+    border-style: none;
+    border-width: 0;
+    color: @theme_selected_fg_color;
+    text-shadow: @button_active_text_shadow;
+}
+
+NemoWindow > GtkGrid > .pane-separator,
+NemoWindow > GtkGrid > .pane-separator:hover {
+    border-width: 0;
+    border-style: solid;
+    border-color: @borders2;
+    background-color: transparent;
+    color: shade (@theme_bg_color, 0.9);
+}
+
+NemoWindow > GtkGrid > .pane-separator:backdrop,
+NemoWindow > GtkGrid > .pane-separator:hover:backdrop {
+	border-right-width: 0px;
+    border-color: @borders2;
+    background-color: transparent;
+}
+
+NemoNotebook.notebook {
+    border-right-width: 0;
+    border-bottom-width: 0;
+    box-shadow: none;
+    border-left-color: shade(@notebook_color, 1.12);
+    border-top-color: @notebook_color;
+}
+
+NemoNotebook .frame {
+    border-width: 0;
+}
+
+/**** FIXES FOR Nemo VIEW AND DESKTOP ***/
+/* Fixes issue with Nemo drawing the .background image inside the view after closing a tab */
+NemoWindow NemoView,
+NemoWindow NemoView .view,
+NemoNotebook.notebook .view {
+	background-color: @notebook_color;
+}
+
+NemoWindow NemoView:backdrop,
+NemoWindow NemoView .view:backdrop,
+NemoNotebook.notebook .view:backdrop {
+	background-color: @notebook_color;
+}
+
+/* Fixes issue with Nemo drawing the above view color on the desktop */
+NemoDesktopWindow NemoView,
+NemoDesktopWindow NemoView .view {
+	background-color: transparent;
+}
+
+NemoDesktopWindow NemoView:backdrop,
+NemoDesktopWindow NemoView .view:backdrop {
+	background-color: transparent;
+}
+
+/* Fixes issue with Nemo drawing the .background image on the desktop */
+NemoDesktopWindow.background {
+	background-image: none;
+	background-color: @theme_bg_color;
+}
+
+
+NemoDesktopWindow.background:backdrop {
+	background-image: none;
+	background-color: @theme_bg_color;
+}
+/*** toolbars and toolbar buttons  ***/
+
+NemoSearchBar.info {
+	border-width: 0px 0 1px 0;
+    border-style: solid;
+    border-top-color: transparent;
+    border-bottom-color: alpha(white, 0.06);
+    box-shadow: inset 0 -1px alpha(black, 0.14);
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+
+    text-shadow: 0 1px @primary_toolbar_button_text_shadow;
+}
+
+NemoSearchBar.info:backdrop {
+    color: @theme_unfocused_fg_color;
+	background-image: none;
+    background-color: @toolbar_gradient_b;
+
+    box-shadow: inset 0 -1px alpha(white, 0.04);
+    text-shadow: none;
+}
+
+NemoToolbar .button {
+    icon-shadow: 0 1px @button_text_shadow;
+}
+
+NemoToolbar .button:active {
+    icon-shadow: 0 1px @button_active_text_shadow;
+}
+
+NemoToolbar .button:insensitive,
+NemoToolbar .button:active *:insensitive {
+    icon-shadow: none;
+}
+
+/************************* Pathbar ************************/
+NemoPathbarButton,
+NemoPathbarButton:backdrop {
+	padding: 0px 0px 0px 3px;
+    border-image: 	none;
+	border-style: solid;
+    border-radius: 0px;
+    border-width: 0px;
+	border-color: transparent;
+	
+	color: @theme_text_color;
+    text-shadow: 0 1px @button_text_shadow;
+	
+    -NemoPathbarButton-border-radius: 5px;
+}
+
+NemoPathbarButton,
+NemoPathbarButton:backdrop,
+NemoPathbarButton:backdrop:hover {
+	border-width: 0;
+    border-color: alpha(black, 0.04);
+	background-color: transparent;
+	box-shadow: 0 2px alpha(white, 0.02) inset,
+				0 -2px alpha(black, 0.04) inset,
+				-2px 0 alpha(black, 0.04) inset,
+				2px 0 alpha(white, 0.02) inset;
+				
+	background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_a 49%,
+                                      shade(@button_gradient_color_a, 0.95) 51%,
+                                      shade(@button_gradient_color_a, 0.95)
+                                      );
+}
+
+NemoPathbarButton:backdrop,
+NemoPathbarButton:backdrop:hover {
+	color: @theme_unfocused_text_color;
+	text-shadow: none;
+	
+	border-width: 0;
+    border-color: alpha(black, 0.04);
+
+	box-shadow: none;
+				
+	background-color: @button_gradient_color_a;
+	background-image: none;
+}
+
+NemoPathbarButton:hover {
+	border-width: 0;
+    border-color: alpha(black, 0.16);
+	background-color: transparent;
+	box-shadow: 0 2px alpha(white, 0.02) inset,
+				0 -2px alpha(black, 0.04) inset,
+				-2px 0 alpha(black, 0.04) inset,
+				2px 0 alpha(white, 0.02) inset;
+
+	background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 1.04),
+                                      shade(@button_gradient_color_a, 1.04) 49%,
+                                      shade(@button_gradient_color_a, 0.96) 51%,
+                                      shade(@button_gradient_color_a, 0.96)
+                                      );
+    transition: 320ms ease-in-out;
+}
+
+NemoPathbarButton:active,
+NemoPathbarButton:active:hover,
+NemoPathbarButton:backdrop:active,
+NemoPathbarButton:backdrop:active:hover {
+	color: @button_active_text;
+    text-shadow: 0 1px @button_active_text_shadow;
+
+    border-width: 0;
+    border-color: alpha(black, 0.06);
+	background-color: transparent;
+	box-shadow: 0 2px alpha(white, 0.02) inset,
+				0 -2px alpha(black, 0.04) inset,
+				-2px 0 alpha(black, 0.04) inset,
+				2px 0 alpha(white, 0.02) inset;
+
+	background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 0.80),
+                                      shade(@button_gradient_color_a, 0.80) 49%,
+                                      shade(@button_gradient_color_a, 0.80) 51%,
+                                      shade(@button_gradient_color_a, 0.80)
+                                      );
+	transition: 360ms ease-in-out;
+}
+
+NemoPathbarButton:active:backdrop,
+NemoPathbarButton:active:hover:backdrop {
+	color: @theme_unfocused_active_button_text;
+    text-shadow: none;
+	box-shadow: none;
+	background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 0.78),
+                                      shade(@button_gradient_color_a, 0.78) 49%,
+                                      shade(@button_gradient_color_a, 0.78) 51%,
+                                      shade(@button_gradient_color_a, 0.78)
+                                      );
+	transition: 360ms ease-in-out;
+}

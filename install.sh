@@ -127,7 +127,7 @@ xfce4-session &
 _EOF_
 	cat > $PREFIX/bin/vncstart <<- _EOF_
 	vncserver -kill :1 > /dev/null 2>&1
-	vncserver
+	vncserver -geometry 1508x720 -xstartup $PREFIX/bin/xfce4-session -listen tcp :1
 	termux-open vnc://127.0.0.1:5901
 	_EOF_
 	chmod 777 $PREFIX/bin/vncstart

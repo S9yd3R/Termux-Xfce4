@@ -1,0 +1,48 @@
+# XFCE Notify #
+style "notify-window" 
+{
+    XfceNotifyWindow::summary-bold = 1
+    XfceNotifyWindow::border-color = @text_color
+    XfceNotifyWindow::border-radius = 5.0
+    XfceNotifyWindow::border-width = 3.0
+    bg[NORMAL] = @base_color
+}
+
+class "XfceNotifyWindow" style "notify-window"
+
+style "notify-text"
+{
+    fg[NORMAL] 				= "#b3b3b3"
+    GtkWidget::link-color 	= "#4a90d9"
+    
+    engine "murrine"
+ 	{
+		text_shade 	= 0.8
+		textstyle 	= 1
+	}
+}
+
+widget_class "XfceNotifyWindow.*.<GtkLabel>" style "notify-text"
+
+style "notify-summary"
+{
+	fg[NORMAL] 			= "#e2e2e2"
+    font_name 			= "Bold"
+}
+
+widget "XfceNotifyWindow.*.summary" style "notify-summary"
+
+style "notify-button"
+{
+	GtkWidget::focus_padding = 0
+	font_name 			= "Bold"
+	
+    fg[NORMAL] 			= "#2c2c2c"
+    fg[PRELIGHT] 		= "#2c2c2c"
+    fg[ACTIVE]			= "#1a1a1a"
+
+}
+
+widget_class "XfceNotifyWindow.*<GtkButton>" style "notify-button"
+widget_class "XfceNotifyWindow.*<GtkButton>*<GtkLabel>" style "notify-button"
+

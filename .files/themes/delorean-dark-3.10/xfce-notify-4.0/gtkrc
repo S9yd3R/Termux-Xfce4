@@ -1,0 +1,94 @@
+# XFCE Notify #
+style "notify-window" 
+{
+    XfceNotifyWindow::summary-bold = 1
+    XfceNotifyWindow::border-color = @fg_color
+    XfceNotifyWindow::border-radius = 2.0
+    XfceNotifyWindow::border-width-hover = 2.0
+
+
+	XfceNotifyWindow::border-width = 2.0
+    XfceNotifyWindow::border-color-hover = @selected_fg_color
+    bg[NORMAL] = @text_color
+}
+
+class "XfceNotifyWindow" style "notify-window"
+
+style "notify-text"
+{
+    fg[NORMAL] 				= @bg_color
+    GtkWidget::link-color 	= "#1170A8"
+    
+    engine "murrine"
+ 	{
+		text_shade 	= 1.2
+		textstyle 	= 1
+	}
+}
+
+widget_class "XfceNotifyWindow.*.<GtkLabel>" style "notify-text"
+
+style "notify-summary"
+{
+	fg[NORMAL] 			= @selected_bg_color
+    font_name 			= "Bold"
+
+    engine "murrine"
+ 	{
+		text_shade 	= 0.8
+		textstyle 	= 1
+	}
+}
+
+widget "XfceNotifyWindow.*.summary" style "notify-summary"
+
+style "notify-button"
+{
+    
+    engine "pixmap" 
+   {
+	 image
+    {
+      function			= BOX
+      state				= NORMAL
+      file				= "buttons/button.svg"
+      border			= { 3, 3, 3, 5 }
+      stretch			= TRUE
+    }	
+     image
+    {
+      function			= BOX
+      state				= PRELIGHT
+      file				= "buttons/button-prelight.svg"
+      border			= { 3, 3, 3, 5 }
+      stretch			= TRUE
+    }  
+    image
+    {
+      function			= BOX
+      state				= ACTIVE
+      file				= "buttons/button-active.svg"
+      border			= { 3, 3, 3, 5 }
+      stretch			= TRUE
+    }
+   }
+}
+
+style "button-text"
+{
+	fg[NORMAL] 			= @fg_color
+	fg[PRELIGHT] 		= shade(1.1, @fg_color)
+    fg[ACTIVE]			= @selected_fg_color
+    
+    font_name 			= "Bold"
+
+    engine "murrine"
+ 	{
+		text_shade 	= 0.4
+		textstyle 	= 2
+	}
+}
+
+widget_class "XfceNotifyWindow.*<GtkButton>" style "notify-button"
+widget_class "XfceNotifyWindow.*<GtkButton>*<GtkLabel>" style "button-text"
+

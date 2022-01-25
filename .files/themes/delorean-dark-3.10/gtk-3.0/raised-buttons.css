@@ -1,0 +1,402 @@
+.primary-toolbar .button.raised,
+.primary-toolbar .raised .button,
+.primary-toolbar .button.raised.linked,
+.primary-toolbar.toolbar .button.raised,
+.primary-toolbar.toolbar .button.raised.linked,
+.primary-toolbar.toolbar .raised .button,
+
+.primary-toolbar GtkComboBox .button,
+.primary-toolbar.toolbar GtkComboBox .button {
+	color: @theme_text_color;
+	text-shadow: 0 1px @button_text_shadow;
+	
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.03),
+                                      alpha(white, 0.02) 49%,
+                                      alpha(white, 0.00) 50%,
+                                      alpha(white, 0.00)
+                                      ),
+                      url("assets/delorean-dark-light40-bg.png");
+    box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+
+				-1px 0 alpha(black, 0.26) inset,
+				1px 0 alpha(white, 0.02) inset,
+				2px 0 alpha(white, 0.02) inset;
+	transition: 260ms ease-in;
+}
+
+.primary-toolbar .button.raised:hover,
+.primary-toolbar .raised .button:hover,
+.primary-toolbar .button.raised.linked:hover,
+.primary-toolbar.toolbar .button.raised:hover,
+.primary-toolbar.toolbar .raised .button:hover,
+.primary-toolbar .button.raised:hover:first-child,
+.primary-toolbar .raised .button:hover:first-child,
+.primary-toolbar .button.raised.linked:hover:first-child,
+.primary-toolbar.toolbar .button.raised:hover:first-child,
+.primary-toolbar.toolbar .raised .button:hover:first-child,
+.primary-toolbar .button.raised:hover:last-child,
+.primary-toolbar .raised .button:hover:last-child,
+.primary-toolbar .button.raised.linked:hover:last-child,
+.primary-toolbar.toolbar .button.raised:hover:last-child,
+.primary-toolbar.toolbar .raised .button:hover:last-child,
+.primary-toolbar .button.raised:hover:only-child,
+.primary-toolbar .raised .button:hover:only-child,
+.primary-toolbar .button.raised.linked:hover:only-child,
+.primary-toolbar.toolbar .button.raised:hover:only-child,
+.primary-toolbar.toolbar .raised .button:hover:only-child,
+
+.primary-toolbar GtkComboBox .button:hover,
+.primary-toolbar.toolbar GtkComboBox .button:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.05),
+                                      alpha(white, 0.04) 49%,
+                                      alpha(white, 0.02) 50%,
+                                      alpha(white, 0.02)
+                                      ),
+                      url("assets/delorean-dark-light40-bg.png");
+    box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.01) inset,
+				0 2px alpha(white, 0.01) inset,
+				0 3px alpha(white, 0.00) inset,
+
+				-1px 0 alpha(black, 0.26) inset,
+				1px 0 alpha(black, 0.02) inset,
+				2px 0 alpha(black, 0.02) inset;
+	transition: 200ms ease-in;
+}
+
+.primary-toolbar .button.raised:first-child,
+.primary-toolbar .raised .button:first-child,
+.primary-toolbar .button.raised.linked:first-child,
+.primary-toolbar.toolbar .button.raised:first-child,
+.primary-toolbar.toolbar .raised .button:first-child {
+    box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+
+				-1px 0 alpha(black, 0.26) inset,
+				1px 0 alpha(black, 0.1) inset,
+				2px 0 alpha(black, 0.04) inset;
+}
+
+.primary-toolbar .button.raised:hover:first-child,
+.primary-toolbar .raised .button:hover:first-child,
+.primary-toolbar .button.raised.linked:hover:first-child,
+.primary-toolbar.toolbar .button.raised:hover:first-child,
+.primary-toolbar.toolbar .raised .button:hover:first-child {
+    box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.01) inset,
+				0 2px alpha(white, 0.01) inset,
+				0 3px alpha(white, 0.00) inset,
+
+				-1px 0 alpha(black, 0.26) inset,
+				1px 0 alpha(black, 0.1) inset,
+				2px 0 alpha(black, 0.04) inset;
+	transition: 200ms ease-in;
+}
+
+.primary-toolbar .button.raised:last-child,
+.primary-toolbar .raised .button:last-child,
+.primary-toolbar .button.raised.linked:last-child,
+.primary-toolbar.toolbar .button.raised:last-child,
+.primary-toolbar.toolbar .raised .button:last-child {
+    box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+
+				1px 0 alpha(white, 0.02) inset,
+				2px 0 alpha(white, 0.02) inset,
+				-1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+}
+
+.primary-toolbar .button.raised:hover:last-child,
+.primary-toolbar .raised .button:hover:last-child,
+.primary-toolbar .button.raised.linked:hover:last-child,
+.primary-toolbar.toolbar .button.raised:hover:last-child,
+.primary-toolbar.toolbar .raised .button:hover:last-child {
+    box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.01) inset,
+				0 2px alpha(white, 0.01) inset,
+				0 3px alpha(white, 0.00) inset,
+
+				1px 0 alpha(black, 0.02) inset,
+				2px 0 alpha(black, 0.02) inset,
+				-1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+	transition: 200ms ease-in;
+}
+
+.primary-toolbar .button.raised:active,
+.primary-toolbar .raised .button:active,
+.primary-toolbar .button.raised.linked:active,
+.primary-toolbar.toolbar .button.raised:active,
+.primary-toolbar.toolbar .raised .button:active,
+
+.primary-toolbar .button.raised:active:hover,
+.primary-toolbar .raised .button:active:hover,
+.primary-toolbar .button.raised.linked:active:hover,
+.primary-toolbar.toolbar .button.raised:active:hover,
+.primary-toolbar.toolbar .raised .button:active:hover {
+	color: @button_active_text;
+    text-shadow: 0 1px @button_active_text_shadow;
+
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+	 box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.01) inset,
+				0 3px alpha(white, 0.005) inset,
+
+				1px 0 alpha(white, 0.03) inset,
+
+				-1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+	transition: 200ms ease-in;			
+}
+
+.primary-toolbar .button.raised:active:first-child,
+.primary-toolbar .raised .button:active:first-child,
+.primary-toolbar .button.raised.linked:active:first-child,
+.primary-toolbar.toolbar .button.raised:active:first-child,
+.primary-toolbar.toolbar .raised .button:active:first-child,
+.primary-toolbar .button.raised:active:hover:first-child,
+.primary-toolbar .raised .button:active:hover:first-child,
+.primary-toolbar .button.raised.linked:active:hover:first-child,
+.primary-toolbar.toolbar .button.raised:active:hover:first-child,
+.primary-toolbar.toolbar .raised .button:active:hover:first-child,
+
+.primary-toolbar .button.raised:active:only-child,
+.primary-toolbar .raised .button:active:only-child,
+.primary-toolbar .button.raised.linked:active:only-child,
+.primary-toolbar.toolbar .button.raised:active:only-child,
+.primary-toolbar.toolbar .raised .button:active:only-child,
+.primary-toolbar .button.raised:active:hover:only-child,
+.primary-toolbar .raised .button:active:hover:only-child,
+.primary-toolbar .button.raised.linked:active:hover:only-child,
+.primary-toolbar.toolbar .button.raised:active:hover:only-child,
+.primary-toolbar.toolbar .raised .button:active:hover:only-child {
+	background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+	 box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.01) inset,
+				0 3px alpha(white, 0.005) inset,
+
+				1px 0 alpha(white, 0.02) inset,
+				2px 0 alpha(white, 0.01) inset,
+
+				-1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+	transition: 200ms ease-in;			
+}
+
+.primary-toolbar .button.raised:active:last-child,
+.primary-toolbar .raised .button:active:last-child,
+.primary-toolbar .button.raised.linked:active:last-child,
+.primary-toolbar.toolbar .button.raised:active:last-child,
+.primary-toolbar.toolbar .raised .button:active:last-child,
+.primary-toolbar .button.raised:active:hover:last-child,
+.primary-toolbar .raised .button:active:hover:last-child,
+.primary-toolbar .button.raised.linked:active:hover:last-child,
+.primary-toolbar.toolbar .button.raised:active:hover:last-child,
+.primary-toolbar.toolbar .raised .button:active:hover:last-child {
+	background-color: transparent;
+    
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+	 box-shadow: 0 -1px alpha(white, 0.02) inset,
+
+				0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.01) inset,
+				0 3px alpha(white, 0.005) inset;
+	transition: 200ms ease-in;			
+}
+
+.primary-toolbar .button.raised:active:hover,
+.primary-toolbar .raised .button:active:hover,
+.primary-toolbar .button.raised.linked:active:hover,
+.primary-toolbar.toolbar .button.raised:active:hover,
+.primary-toolbar.toolbar .raised .button:active:hover,
+.primary-toolbar .button.raised:active:hover:first-child,
+.primary-toolbar .raised .button:active:hover:first-child,
+.primary-toolbar .button.raised.linked:active:hover:first-child,
+.primary-toolbar.toolbar .button.raised:active:hover:first-child,
+.primary-toolbar.toolbar .raised .button:active:hover:first-child,
+.primary-toolbar .button.raised:active:hover:last-child,
+.primary-toolbar .raised .button:active:hover:last-child,
+.primary-toolbar .button.raised.linked:active:hover:last-child,
+.primary-toolbar.toolbar .button.raised:active:hover:last-child,
+.primary-toolbar.toolbar .raised .button:active:hover:last-child,
+.primary-toolbar .button.raised:active:hover:only-child,
+.primary-toolbar .raised .button:active:hover:only-child,
+.primary-toolbar .button.raised.linked:active:hover:only-child,
+.primary-toolbar.toolbar .button.raised:active:hover:only-child,
+.primary-toolbar.toolbar .raised .button:active:hover:only-child {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.04),
+                                      alpha(black, 0.04)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+    transition: 200ms ease-in;                  
+}
+
+.primary-toolbar .button.raised:backdrop,
+.primary-toolbar .raised .button:backdrop,
+.primary-toolbar .button.raised.linked:backdrop,
+.primary-toolbar.toolbar .button.raised:backdrop,
+.primary-toolbar.toolbar .button.raised.linked:backdrop,
+.primary-toolbar.toolbar .raised .button:backdrop,
+.primary-toolbar .button.raised:hover:backdrop,
+.primary-toolbar .raised .button:hover:backdrop,
+.primary-toolbar .button.raised.linked:hover:backdrop,
+.primary-toolbar.toolbar .button.raised:hover:backdrop,
+.primary-toolbar.toolbar .button.raised.linked:hover:backdrop,
+.primary-toolbar.toolbar .raised .button:hover:backdrop,
+
+.primary-toolbar GtkComboBox .button:backdrop,
+.primary-toolbar.toolbar GtkComboBox .button:backdrop,
+.primary-toolbar GtkComboBox .button:hover:backdrop,
+.primary-toolbar.toolbar GtkComboBox .button:hover:backdrop {
+	color: @theme_unfocused_text_color;
+	text-shadow: none;
+	
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.03),
+                                      alpha(white, 0.03)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+	
+    box-shadow: -1px 0 alpha(black, 0.26) inset;                  
+	transition: 260ms ease-in;
+}
+
+.primary-toolbar .button.raised:backdrop:first-child,
+.primary-toolbar .raised .button:backdrop:first-child,
+.primary-toolbar .button.raised.linked:backdrop:first-child,
+.primary-toolbar.toolbar .button.raised:backdrop:first-child,
+.primary-toolbar.toolbar .raised .button:backdrop:first-child,
+.primary-toolbar .button.raised:hover:backdrop:first-child,
+.primary-toolbar .raised .button:hover:backdrop:first-child,
+.primary-toolbar .button.raised.linked:hover:backdrop:first-child,
+.primary-toolbar.toolbar .button.raised:hover:backdrop:first-child,
+.primary-toolbar.toolbar .raised .button:hover:backdrop:first-child {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.03),
+                                      alpha(white, 0.03)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+    box-shadow: -1px 0 alpha(black, 0.26) inset;
+}
+
+.primary-toolbar .button.raised:backdrop:last-child,
+.primary-toolbar .raised .button:backdrop:last-child,
+.primary-toolbar .button.raised.linked:backdrop:last-child,
+.primary-toolbar.toolbar .button.raised:backdrop:last-child,
+.primary-toolbar.toolbar .raised .button:backdrop:last-child,
+.primary-toolbar .button.raised:hover:backdrop:last-child,
+.primary-toolbar .raised .button:hover:backdrop:last-child,
+.primary-toolbar .button.raised.linked:hover:backdrop:last-child,
+.primary-toolbar.toolbar .button.raised:hover:backdrop:last-child,
+.primary-toolbar.toolbar .raised .button:hover:backdrop:last-child {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.03),
+                                      alpha(white, 0.03)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+    box-shadow: none;
+}
+
+.primary-toolbar .button.raised:active:backdrop,
+.primary-toolbar .raised .button:active:backdrop,
+.primary-toolbar .button.raised.linked:active:backdrop,
+.primary-toolbar.toolbar .button.raised:active:backdrop,
+.primary-toolbar.toolbar .raised .button:active:backdrop,
+.primary-toolbar .button.raised:active:hover:backdrop,
+.primary-toolbar .raised .button:active:hover:backdrop,
+.primary-toolbar .button.raised.linked:active:hover:backdrop,
+.primary-toolbar.toolbar .button.raised:active:hover:backdrop,
+.primary-toolbar.toolbar .raised .button:active:hover:backdrop {
+	background-color: transparent;
+    color: @theme_unfocused_active_button_text;
+    text-shadow: none;
+    icon-shadow: none;
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+	 box-shadow: -1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+}
+
+.primary-toolbar .button.raised:active:backdrop:first-child,
+.primary-toolbar .raised .button:active:backdrop:first-child,
+.primary-toolbar .button.raised.linked:active:backdrop:first-child,
+.primary-toolbar.toolbar .button.raised:active:backdrop:first-child,
+.primary-toolbar.toolbar .raised .button:active:backdrop:first-child,
+.primary-toolbar .button.raised:active:hover:backdrop:first-child,
+.primary-toolbar .raised .button:active:hover:backdrop:first-child,
+.primary-toolbar .button.raised.linked:active:hover:backdrop:first-child,
+.primary-toolbar.toolbar .button.raised:active:hover:backdrop:first-child,
+.primary-toolbar.toolbar .raised .button:active:hover:backdrop:first-child {
+	background-color: transparent;
+    
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+	 box-shadow: -1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+}
+
+.primary-toolbar .button.raised:active:backdrop:last-child,
+.primary-toolbar .raised .button:active:backdrop:last-child,
+.primary-toolbar .button.raised.linked:active:backdrop:last-child,
+.primary-toolbar.toolbar .button.raised:active:backdrop:last-child,
+.primary-toolbar.toolbar .raised .button:active:backdrop:last-child,
+.primary-toolbar .button.raised:active:hover:backdrop:last-child,
+.primary-toolbar .raised .button:active:hover:backdrop:last-child,
+.primary-toolbar .button.raised.linked:active:hover:backdrop:last-child,
+.primary-toolbar.toolbar .button.raised:active:hover:backdrop:last-child,
+.primary-toolbar.toolbar .raised .button:active:hover:backdrop:last-child {
+	background-color: transparent;
+    
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+	 box-shadow: none;
+}

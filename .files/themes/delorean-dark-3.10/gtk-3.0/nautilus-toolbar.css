@@ -1,0 +1,616 @@
+/**********************
+*  NautilusPathbar    *
+**********************/
+
+NautilusPathBar.linked .button,
+NautilusPathBar.linked .button:hover,
+NautilusPathBar.linked .button:insensitive,
+NautilusPathBar.linked .button:insensitive:backdrop,
+NautilusPathBar.linked .button:backdrop,
+NautilusPathBar.linked .button:hover:backdrop {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.14),
+                                      alpha(white, 0.00)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+    border-radius: 0px;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: url("borders/button/nautilus-pathbar.svg") 3 4 4 3 / 3px 0px 4px 0px stretch;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.38) inset,
+				1px 0 alpha(white, 0.03) inset,
+				2px 0 alpha(white, 0.01) inset;
+				
+	transition: 260ms ease-in;
+}
+
+NautilusPathBar.linked .button:backdrop,
+NautilusPathBar.linked .button:hover:backdrop,
+NautilusPathBar.linked .button:insensitive:backdrop {
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.07),
+                                      alpha(white, 0.00)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+}
+
+NautilusPathBar.linked .button:first-child,
+NautilusPathBar.linked .button:first-child:backdrop,
+NautilusPathBar.linked .button:hover:first-child:backdrop,
+NautilusPathBar.linked .button:insensitive:first-child,
+NautilusPathBar.linked .button:insensitive:first-child:backdrop {
+	border-image-width: 3px 0px 4px 3px;
+    border-width: 1px 0px 2px 1px;
+	border-radius: 3px 0 0 3px;
+	
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.38) inset,
+				1px 0 alpha(white, 0.03) inset,
+				2px 0 alpha(white, 0.01) inset;
+}
+
+NautilusPathBar.linked .button:last-child,
+NautilusPathBar.linked .button:last-child:backdrop,
+NautilusPathBar.linked .button:hover:last-child:backdrop,
+NautilusPathBar.linked .button:insensitive:last-child,
+NautilusPathBar.linked .button:insensitive:last-child:backdrop {
+	border-image-width: 3px 4px 4px 0px;
+    border-width: 1px 2px 2px 0px;
+	border-radius: 0 3px 3px 0;
+	
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				1px 0 alpha(white, 0.03) inset,
+				2px 0 alpha(white, 0.01) inset,
+				-1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+}
+
+NautilusPathBar.linked .button:hover {
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.09),
+                                      alpha(white, 0.0) 44%,
+                                      alpha(black, 0.0) 45%,
+                                      alpha(black, 0.12)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+    border-image: url("borders/button/nautilus-pathbar-hover.svg") 3 4 4 3 / 3px 0px 4px 0px stretch;
+    border-radius: 0 3px 3px 0;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: transparent;
+    
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.32) inset,
+				1px 0 alpha(black, 0.03) inset,
+				2px 0 alpha(black, 0.03) inset;
+                     
+	transition: 360ms ease-in;
+}
+
+NautilusPathBar.linked .button:hover:first-child {
+	border-image-width: 3px 0px 4px 3px;
+	border-radius: 3px 0 0 3px;
+	border-width: 1px 0px 2px 1px;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.38) inset,
+				1px 0 alpha(white, 0.03) inset,
+				2px 0 alpha(white, 0.01) inset;
+}
+
+NautilusPathBar.linked .button:hover:last-child {
+	border-image-width: 3px 4px 4px 0px;
+	border-radius: 0 3px 3px 0;
+	border-width: 1px 2px 2px 0px;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.32) inset,
+				1px 0 alpha(black, 0.03) inset,
+				2px 0 alpha(black, 0.03) inset;
+}
+
+NautilusPathBar.linked .button:active,
+NautilusPathBar.linked .button:active:only-child,
+NautilusPathBar.linked .button:active:backdrop,
+NautilusPathBar.linked .button:active:hover:backdrop,
+NautilusPathBar.linked .button:active:only-child:backdrop,
+NautilusPathBar.linked .button:active:hover:only-child:backdrop {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.06),
+                                      alpha(white, 0.0) 44%,
+                                      alpha(black, 0.0) 45%,
+                                      alpha(black, 0.24)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+    border-radius: 0px;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: transparent;
+	border-image: url("borders/button/nautilus-pathbar-active.svg") 3 4 4 3 / 3px 0px 4px 0px stretch;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.32) inset,
+				1px 0 alpha(black, 0.03) inset,
+				2px 0 alpha(black, 0.03) inset;
+				
+	transition: 30ms ease-in;
+}
+
+NautilusPathBar.linked .button:active:backdrop,
+NautilusPathBar.linked .button:active:hover:backdrop,
+NautilusPathBar.linked .button:active:only-child:backdrop,
+NautilusPathBar.linked .button:active:hover:only-child:backdrop {
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.03),
+                                      alpha(white, 0.0) 44%,
+                                      alpha(black, 0.0) 45%,
+                                      alpha(black, 0.12)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+}
+
+NautilusPathBar.linked .button:active:first-child,
+NautilusPathBar.linked .button:active:first-child:backdrop,
+NautilusPathBar.linked .button:active:hover:first-child:backdrop{
+	border-image-width: 3px 0px 4px 3px;
+	border-radius: 3px 0 0 3px;
+	border-width: 1px 0px 2px 1px;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.42) inset,
+				1px 0 alpha(black, 0.1) inset,
+				2px 0 alpha(black, 0.04) inset;
+}
+
+NautilusPathBar.linked .button:active:last-child,
+NautilusPathBar.linked .button:active:last-child:backdrop {
+	border-image-width: 3px 4px 4px 0px;
+	border-radius: 0 3px 3px 0;
+	border-width: 1px 2px 2px 0px;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				1px 0 alpha(black, 0.06) inset,
+				2px 0 alpha(black, 0.03) inset,
+
+				-1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+}
+
+NautilusPathBar.linked .button:active:hover {
+	color: shade(@theme_selected_bg_color, 1.6);
+}
+
+NautilusPathBar.linked .button:active:hover,
+NautilusPathBar.linked .button:active:hover:only-child {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.04),
+                                      alpha(white, 0.0) 44%,
+                                      alpha(black, 0.0) 45%,
+                                      alpha(black, 0.26)
+                                      ),
+                      url("assets/delorean-dark-light20-bg.png");
+    border-radius: 0px;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: url("borders/button/nautilus-pathbar-active.svg") 3 4 4 3 / 3px 0px 4px 0px stretch;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.32) inset,
+				1px 0 alpha(black, 0.03) inset,
+				2px 0 alpha(black, 0.03) inset;
+				
+	transition: 400ms ease-in-out;
+}
+
+NautilusPathBar.linked .button:first-child:active:hover {
+	border-image-width: 3px 0px 4px 3px;
+	border-radius: 3px 0 0 3px;
+	border-width: 1px 0px 2px 1px;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.42) inset,
+				1px 0 alpha(black, 0.1) inset,
+				2px 0 alpha(black, 0.04) inset;
+} 
+
+NautilusPathBar.linked .button:active:hover:last-child {
+	border-image-width: 3px 4px 4px 0px;
+	border-width: 1px 2px 2px 0px;
+	border-radius: 0 3px 3px 0;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				1px 0 alpha(black, 0.06) inset,
+				2px 0 alpha(black, 0.03) inset,
+
+				-1px 0 alpha(black, 0.1) inset,
+				-2px 0 alpha(black, 0.02) inset;
+}
+
+NautilusPathBar.linked .button:only-child,
+NautilusPathBar.linked .button:hover:only-child,
+NautilusPathBar.linked .button:only-child:backdrop,
+NautilusPathBar.linked .button:hover:only-child:backdrop,
+NautilusPathBar.linked .button:active:only-child,
+NautilusPathBar.linked .button:active:hover:only-child,
+NautilusPathBar.linked .button:active:only-child:backdrop,
+NautilusPathBar.linked .button:active:hover:only-child:backdrop,
+NautilusPathBar.linked .button:insensitive:only-child,
+NautilusPathBar.linked .button:insensitive:only-child:backdrop {
+	border-image-width: 3px 4px 4px 3px;
+    border-radius: 3px;
+    border-width: 1px 2px 2px 1px;
+}
+
+NautilusPathBar.linked .button:insensitive:backdrop,
+NautilusPathBar.linked .button:backdrop,
+NautilusPathBar.linked .button:hover:backdrop,
+NautilusPathBar.linked .button:active:backdrop,
+NautilusPathBar.linked .button:active:hover:backdrop,
+NautilusPathBar.linked .button:only-child:backdrop,
+NautilusPathBar.linked .button:hover:only-child:backdrop,
+NautilusPathBar.linked .button:active:only-child:backdrop,
+NautilusPathBar.linked .button:active:hover:only-child:backdrop,
+NautilusPathBar.linked .button:insensitive:only-child:backdrop,
+NautilusPathBar.linked .button:first-child:backdrop,
+NautilusPathBar.linked .button:hover:first-child:backdrop,
+NautilusPathBar.linked .button:insensitive:first-child:backdrop,
+NautilusPathBar.linked .button:last-child:backdrop,
+NautilusPathBar.linked .button:hover:last-child:backdrop,
+NautilusPathBar.linked .button:insensitive:last-child:backdrop,
+NautilusPathBar.linked .button:active:first-child:backdrop,
+NautilusPathBar.linked .button:active:hover:first-child:backdrop,
+NautilusPathBar.linked .button:active:last-child:backdrop {
+	box-shadow: none;
+	border-image-source: url("borders/button/nautilus-pathbar-hover.svg");
+}
+
+
+/**************************
+ *  Search & Menu Butons  *
+ * ***********************/
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5),
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):hover,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):active,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):active:hover,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3),
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):hover,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):active,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):active:hover {
+	background-image: none;
+	background-color: transparent;
+	border-image: none;
+	border-style: none;
+	box-shadow: none;
+
+	color: @theme_selected_fg_color;
+	icon-shadow: -1px -1px 1px alpha(black, 0.30);
+	}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3),
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):hover,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):active,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):active:hover {
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-image: none;
+}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5) {
+	color: shade(@special_color, 1.4);
+	}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):hover {
+	color: shade(@theme_selected_bg_color, 1.10);
+	}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):hover {
+	color: shade(@special_color, 1.10);
+	}
+
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):active,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):active:hover {
+	background-image: none;
+    background-color: darker(@theme_bg_color);
+
+    border-image: none;
+    
+    border-color: shade(@menu_bg_color, 0.86);
+    border-bottom-color: darker(@theme_bg_color);
+    border-radius: 3px 3px 0 0;
+	box-shadow:  1px  0px alpha(white, 0.07) inset,
+				 0px  1px alpha(white, 0.11) inset,
+				-1px  0px alpha(black, 0.09) inset;
+    color: darker(@menu_fg_color);
+}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):active:hover {
+	icon-shadow: 1px  1px  0px alpha(black, 0.24),
+				 2px  2px  4px @theme_selected_bg_color,
+				-2px -2px  4px @theme_selected_bg_color;
+}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):active:hover,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):active {
+	color: @theme_selected_fg_color;
+
+	box-shadow: inset  1px  1px alpha(white, 0.04),
+				inset  2px  2px alpha(white, 0.015);
+	icon-shadow: -1px -1px 2px alpha(black, 0.2),
+				  1px  1px 2px alpha(black, 0.2);
+	border-radius: 2px;
+    border-width: 1px;
+
+    border-style: solid;
+    border-color: #2a2a2a;
+    border-image: none;
+    background-image: linear-gradient(to bottom,
+                                      alpha(@theme_selected_bg_color, 0.7),
+									  alpha(@theme_selected_bg_color, 0.9)
+                                      );
+    background-color: transparent;
+	}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):active:hover {
+	color: shade(@theme_selected_bg_color, 1.60);
+	icon-shadow: 1px  1px  0px alpha(black, 0.24),
+				 2px  2px  4px @theme_selected_bg_color,
+				-2px -2px  4px @theme_selected_bg_color;
+	}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):backdrop,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):backdrop {
+	color: @theme_unfocused_fg_color;
+}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):backdrop:active,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkMenuButton.button:nth-child(5):backdrop:active:hover,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):backdrop:active,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):backdrop:active:hover {
+	color: @theme_unfocused_text_color;
+	icon-shadow: none;
+}
+
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):backdrop:active,
+NautilusToolbar.titlebar > GtkBox.horizontal > GtkToggleButton.button:nth-child(3):backdrop:active:hover {
+	box-shadow: none;
+	background-image: none;
+	background-color: @theme_unfocused_selected_bg_color;
+	color: @theme_unfocused_selected_fg_color;
+}
+	
+/*****************************************
+ *  Back/Forward & Linked View Buttons   *
+ * **************************************/
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:insensitive,
+NautilusToolbar.titlebar GtkBox:nth-child(1).raised .button:insensitive,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised {
+	background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.06),
+                                      alpha(black, 0.06)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+	background-color: transparent;
+	/*box-shadow: inset 0 1px alpha(white, 0.07),
+				inset 0 2px alpha(white, 0.01);*/
+	box-shadow: inset 0 1px alpha(black, 0.08),
+				inset 0 2px alpha(black, 0.04);
+				
+	color: @theme_selected_fg_color;
+
+	padding: 3px;
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised {
+	color: shade(@theme_selected_bg_color, 1.4);
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:first-child,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:first-child,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:first-child,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:first-child {
+	/*box-shadow: inset 1px 1px alpha(white, 0.07),
+				inset 2px 2px alpha(white, 0.01);*/
+	box-shadow: inset 1px 1px alpha(black, 0.08),
+				inset 2px 2px alpha(black, 0.04);			
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:insensitive:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).raised .button:insensitive:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:first-child:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:first-child:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:active:hover:backdrop {
+	color: @theme_unfocused_fg_color;
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+	background-color: transparent;
+	box-shadow: none;
+}
+
+
+
+
+/**Nots sure about this */
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:first-child,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:first-child,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:last-child,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:last-child,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:insensitive,
+NautilusToolbar.titlebar GtkBox:nth-child(1).raised .button:insensitive,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:insensitive:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).raised .button:insensitive:backdrop {
+	background-image: none;
+	background-color: transparent;
+	border-image: none;
+	border-style: none;
+	box-shadow: none;
+
+	/*background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.06),
+									  transparent
+                                      );
+    background-color: transparent;
+    
+    border-radius: 2px;
+    border-width: 1px;
+    
+    border-style: solid;
+    border-color: #282828;
+    border-image: none;
+    
+    icon-shadow: -1px -1px 2px alpha(black, 0.2),
+				  1px  1px 2px alpha(black, 0.2);
+				
+	box-shadow: inset  1px  1px alpha(white, 0.06),
+				inset  2px  2px alpha(white, 0.015);*/
+	}
+	
+	
+/*
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:first-child,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:first-child {
+	border-right-width: 0px;
+	border-radius: 2px 0 0 2px;
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:last-child,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:last-child {
+	border-left-width: 0px;
+	border-radius: 0 2px 2px 0;
+	box-shadow: inset  0  1px alpha(white, 0.06),
+				inset  0  2px alpha(white, 0.015);
+}*/
+/* */
+
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:hover,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:hover,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:hover,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:hover {
+	color: shade(@theme_selected_bg_color, 1.10);
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:active,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:active {
+	color: shade(@theme_selected_bg_color, 1.40);
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:hover,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:hover {
+	color: @theme_selected_fg_color;
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:hover,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:hover,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:active:hover,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:active:hover {
+	icon-shadow: 1px  1px  0px alpha(black, 0.24),
+				 2px  2px  4px @theme_selected_bg_color,
+				-2px -2px  4px @theme_selected_bg_color;
+	}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:active:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4).linked .button:active:hover:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(4) .button .raised:active:hover:backdrop {
+	color: @theme_unfocused_text_color;
+	icon-shadow: none;
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:first-child *:insensitive,
+NautilusToolbar.titlebar GtkBox:nth-child(1).raised .button:first-child *:insensitive,
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button:last-child *:insensitive,
+NautilusToolbar.titlebar GtkBox:nth-child(1).raised .button:last-child *:insensitive {
+	color: #464646;
+}
+
+NautilusToolbar.titlebar GtkBox:nth-child(1).linked .button *:insensitive:backdrop,
+NautilusToolbar.titlebar GtkBox:nth-child(1) .button .raised *:insensitive:backdrop {
+	color: @unfocused_insensitive_fg_color;
+}
+

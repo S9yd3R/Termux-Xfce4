@@ -1,0 +1,1925 @@
+@define-color documents_emblem_bg #3465a4;
+@define-color documents_collection_bg #d3d7cf;
+@define-color gedit_not_found_bg rgb (237, 54, 54);
+@define-color gedit_not_found_fg white;
+
+/****************
+ * Applications *
+ ****************/
+/* used by gnome-font-viewer and sushi */
+SushiFontWidget {
+    padding: 6px 12px;
+}
+
+/* gnome-terminal */
+VteTerminal {
+    background-color: shade(@theme_base_color, 0.8);
+    color: @theme_fg_color;
+}
+
+TerminalWindow GtkNotebook.notebook,
+TerminalWindow GtkNotebook.notebook:backdrop {
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-top-color: shade(@theme_base_color, 0.8);
+    box-shadow: none;
+    color: @theme_fg_color;
+    text-shadow: -1px -1px alpha(black, 0.26);
+}
+
+/*
+TerminalWindow GtkNotebook.notebook:backdrop {
+    border-top-color: shade(@theme_base_color, 0.8);
+}
+
+TerminalWindow GtkNotebook.notebook tab,
+TerminalWindow GtkNotebook.notebook tab:backdrop {
+    border-width: 1px 0px 0px 0px;
+	border-color: shade( @notebook_tab_bg, 0.60);
+
+    box-shadow:  0 1px alpha(black, 0.45) inset,
+				0 2px alpha(black, 0.02) inset,
+				0 3px alpha(black, 0.02) inset,
+				0 4px alpha(black, 0.02) inset,
+				0 5px alpha(black, 0.02) inset,
+				0 6px alpha(black, 0.02) inset,
+
+				1px 0 alpha(black, 0.18);
+	border-top-color: transparent;
+	border-image: none;
+}
+
+TerminalWindow GtkNotebook.notebook tab:active,
+TerminalWindow GtkNotebook.notebook tab:active:backdrop {
+	box-shadow: inset 0 -1px alpha(black, 0.5),
+				 inset 1px 0 alpha(black, 0.66),
+				 inset -1px 0 alpha(black, 0.38),
+				 inset 2px 0 alpha(white, 0.06);
+
+	border-width: 0px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-color: transparent;
+	border-image: none;
+}*/
+
+
+
+TerminalWindow .scrollbar.trough,
+TerminalWindow .scrollbar.trough:backdrop,
+TerminalWindow GtkNotebook.scrollbar.trough,
+TerminalWindow GtkNotebook.scrollbar.trough:backdrop {
+	background-color: shade(@theme_base_color, 0.9);
+}
+
+/* nautilus */
+.nautilus-canvas-item {
+    border-radius: 5px;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+    color: @theme_selected_fg_color;
+    text-shadow: 1px 1px black;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+    color: @theme_text_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+    color: @theme_selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected {
+    text-shadow: none;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected:backdrop {
+    color: @theme_unfocused_selected_fg_color;
+}
+
+NautilusWindow .sidebar,
+NautilusWindow .sidebar .view,
+NautilusWindow .sidebar .cell,
+NautilusWindow .sidebar .cell:hover,
+NautilusWindow .sidebar GtkScrolledWindow,
+NautilusWindow .sidebar:backdrop,
+NautilusWindow .sidebar .view:backdrop,
+NautilusWindow .sidebar .cell:backdrop,
+NautilusWindow .sidebar .cell:backdrop:hover,
+NautilusWindow .sidebar GtkScrolledWindow:backdrop {
+	background-color: transparent;
+	background-image: none;
+}
+/*
+NautilusWindow .sidebar .cell:selected:selected,
+NautilusWindow .sidebar .cell:selected:selected:backdrop {
+	border-radius: 0 2px 2px 0;
+	border-width: 1px 1px 1px 0;
+}*/
+
+NautilusWindow .sidebar .scrollbar.trough:backdrop {
+    background-color: #1f1f1f;
+    box-shadow: none;
+}
+
+NautilusWindow .sidebar .frame,
+NautilusWindow .sidebar .frame:backdrop {
+    border-style: none;
+    border-image: none;
+}
+
+NautilusWindow > GtkGrid > .pane-separator,
+NautilusWindow > GtkGrid > .pane-separator:hover {
+    border-width: 0px 0px 0px 0px;
+    border-style: solid;
+    border-left-color: alpha(white, 0.09);
+    background-color: transparent;
+    color: shade (@theme_bg_color, 0.9);
+}
+
+NautilusWindow > GtkGrid > .pane-separator:backdrop,
+NautilusWindow > GtkGrid > .pane-separator:hover:backdrop {
+	 border-width: 0px 0px 0px 0px;
+    border-color: @unfocused_borders;
+    background-color: transparent;
+}
+/*
+NautilusNotebook.notebook {
+	border-top-width: 1px;
+    border-right-width: 0;
+    border-left-width: 1px;
+    border-bottom-width: 0;
+    border-top-color: shade( @notebook_color, 1.36);
+    border-left-color: shade( @notebook_color, 1.30);
+    border-image: none;
+}
+
+NautilusNotebook.notebook:backdrop {
+	border-top-width: 1px;
+    border-right-width: 0;
+    border-left-width: 1px;
+    border-bottom-width: 0;
+    border-top-color: shade( @notebook_color, 1.16);
+    border-left-color: shade( @notebook_color, 1.10);
+    border-image: none;
+}
+
+NautilusNotebook.notebook tab,
+NemoNotebook.notebook tab {
+    border-color: shade( @notebook_tab_bg, 0.74);
+    box-shadow: inset 0 1px alpha(white, 0.12);
+    background-color: @notebook_tab_bg;
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.08),
+                                      alpha(white, 0.02) 39%,
+                                      alpha(black, 0.05) 41%,
+                                      alpha(black, 0.00)
+                                      );
+}
+
+NautilusNotebook.notebook tab:backdrop,
+NemoNotebook.notebook tab:backdrop {
+    border-color: shade( @notebook_tab_bg, 0.65);
+    box-shadow: inset 0 1px alpha(white, 0.06);
+    background-color: shade(@notebook_tab_bg, 0.8);
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.08),
+                                      alpha(white, 0.02) 39%,
+                                      alpha(black, 0.05) 41%,
+                                      alpha(black, 0.00)
+                                      );
+}*/
+
+NautilusWindow .titlebar,
+NautilusWindow .titlebar:backdrop {
+	border-width: 0;
+	border-style: none;
+	box-shadow: 0 1px #525252 inset;
+}
+
+NautilusNotebook .frame,
+NautilusNotebook .frame:backdrop {
+    border-width: 0;
+}
+
+NautilusNotebook.notebook .view,
+NautilusNotebook.notebook .view:backdrop {
+background-color: @notebook_color;
+}
+
+/**** FIXES FOR NAUTILUS VIEW AND DESKTOP ***/
+/* Fixes issue with Nautilus drawing the .background image inside the view after closing a tab */
+NautilusWindow NautilusView,
+NautilusWindow NautilusView .view,
+NemoWindow NemoIconView,
+NemoWindow NemoIconView .view {
+	background-color: @notebook_color;
+}
+
+NautilusWindow NautilusView:backdrop,
+NautilusWindow NautilusView .view:backdrop,
+NemoWindow NemoIconView:backdrop,
+NemoWindow NemoIconView .view:backdrop {
+	background-color: shade(@notebook_color, 0.8);
+}
+
+/* Fixes issue with Nautilus drawing the above view color on the desktop */
+NautilusDesktopWindow NautilusView,
+NautilusDesktopWindow NautilusView .view,
+NemoDesktopWindow NemoDesktopIconView,
+NemoDesktopWindow NemoDesktopIconView .view {
+	background-color: transparent;
+}
+
+NautilusDesktopWindow NautilusView:backdrop,
+NautilusDesktopWindow NautilusView .view:backdrop,
+NemoDesktopWindow NemoDesktopIconView:backdrop,
+NemoDesktopWindow NemoDesktopIconView .view:backdrop {
+	background-color: transparent;
+}
+
+/* Fixes issue with Nautilus drawing the .background image on the desktop */
+NautilusDesktopWindow.background,
+NemoDesktopWindow.background {
+	background-image: none;
+	background-color: @theme_bg_color;
+}
+
+
+NautilusDesktopWindow.background:backdrop,
+NemoDesktopWindow.background:backdrop {
+	background-image: none;
+	background-color: shade(@theme_bg_color,0.8);
+}
+
+/***   ***/
+
+NautilusWindow NautilusView.frame,
+NautilusWindow NautilusView .view.frame,
+NemoWindow NemoView.frame,
+NemoWindow NemoView .view.frame {
+	border-style: solid;
+	border-width: 1px 0 0 1px;
+	border-color: darker (@theme_bg_color);
+}
+
+NautilusWindow NautilusView.frame:backdrop,
+NautilusWindow NautilusView .view.frame:backdrop,
+NemoWindow NemoView.frame:backdrop,
+NemoWindow NemoView .view.frame:backdrop {
+	border-style: solid;
+	border-width: 1px 0 0 1px;
+	border-color: darker (shade(@theme_bg_color, 1.15));
+}
+
+/* Fixes 1st opened notebook-tab from having a border drawn across it */
+NautilusNotebook .frame,
+NautilusNotebook.notebook .frame,
+NemoNotebook .frame {
+    border-width: 1px 0 0 0px;
+    border-color:@notebook_color;
+    background-color: @notebook_color;
+    background-image: none;
+    border-image:none;
+}
+
+NautilusNotebook .frame:backdrop,
+NautilusNotebook.notebook .frame:backdrop,
+NemoNotebook .frame:backdrop {
+    border-width: 1px 0 0 0;
+    background-color: @notebook_color;
+    background-image: none;
+    border-color: @notebook_color;
+    border-image:none;
+}
+
+NautilusToolbar .button {
+    icon-shadow: 0 1px @button_text_shadow;
+}
+
+NautilusToolbar .button:active {
+    icon-shadow: 0 1px @button_active_text_shadow;
+}
+
+NautilusToolbar .button:insensitive,
+NautilusToolbar .button:active *:insensitive {
+    icon-shadow: none;
+}
+
+NautilusQueryEditor .primary-toolbar.toolbar ,
+NautilusQueryEditor .primary-toolbar.toolbar:backdrop {
+    border-top-width: 0px;
+    border-top-color: transparent;
+    border-bottom-width: 0;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;              
+}
+
+NautilusQueryEditor .primary-toolbar.toolbar .entry {
+	border-image-source: url("borders/entry/ephy-entry.svg");
+    border-image-width: 4px;
+}
+
+NautilusQueryEditor .primary-toolbar.toolbar .entry:focus {
+	border-image-source: url("borders/button/entry-2.svg");
+	background-color: @entry_bg_focus;
+	background-image: none;
+}
+
+NautilusQueryEditor .primary-toolbar.toolbar .entry:selected,
+NautilusQueryEditor .primary-toolbar.toolbar .entry:focus:selected {
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+}
+
+NautilusQueryEditor .toolbar {
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    border-width: 0 ;
+    border-style: solid;
+    border-color: alpha(white, 0.11);
+	background-image: none;
+			
+}
+
+NautilusQueryEditor .toolbar:nth-child(2) {
+	border-width: 0 ;
+    border-color: alpha(white, 0.11);
+}
+
+NautilusQueryEditor .toolbar:last-child {
+    border-width: 0 0 1px 0;
+    border-bottom-color: alpha(white, 0.06);
+    box-shadow: inset 0 -1px alpha(black, 0.2);	
+}
+
+NautilusQueryEditor .primary-toolbar.toolbar:last-child {
+	border-width: 0;
+    box-shadow: none;
+}
+
+NautilusQueryEditor .toolbar:backdrop {
+    box-shadow: none;
+}
+
+NautilusQueryEditor .toolbar:backdrop:nth-child(2) {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+
+
+NautilusQueryEditor .toolbar:nth-child(2) .button.raised,
+NautilusQueryEditor .toolbar:nth-child(2) .button.raised:backdrop,
+NautilusQueryEditor .toolbar:nth-child(2) .button.raised:backdrop:hover {
+	background-image: none;
+	background-color: transparent;
+	border-image: none;
+	border-color: transparent;
+	box-shadow: none;
+	padding:4px;
+}
+
+NautilusQueryEditor .toolbar:nth-child(2) .button.raised:active,
+NautilusQueryEditor .toolbar:nth-child(2) .button.raised:active:hover,
+NautilusQueryEditor .toolbar:nth-child(2) .button.raised:hover {
+	background-image: none;
+    background-color: alpha(black, 0.32);
+    box-shadow: inset 0 1px alpha(black, 0.16),
+				inset 0 2px alpha(black, 0.06),
+				inset 1px 0 alpha(black, 0.12),
+				inset 2px 0 alpha(black, 0.04);
+    color:  @error_color;
+    icon-shadow: -1px 0px alpha(black, 0.22),
+				0px -1px alpha(black, 0.34);
+	border-image: none;			
+    border-color: alpha(white, 0.05);
+    border-top-color: transparent;
+    border-left-color: transparent;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button,
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:hover,
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:backdrop:hover,
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .button.raised {
+	border-radius: 0px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+	background-color: transparent;
+	box-shadow: 0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(black, 0.08) inset,
+				0 -1px alpha(white, 0.02) inset;
+
+	background-image: linear-gradient(to bottom,
+                                      @button_gradient_color_a,
+                                      @button_gradient_color_a 49%,
+                                      shade(@button_gradient_color_a, 0.95) 51%,
+                                      shade(@button_gradient_color_a, 0.95)
+                                      );
+    border-image: url("borders/button/button-notebook.svg") 3 3 4 3 / 3px 3px 4px 3px stretch;                                  
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:hover,
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:hover,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:hover,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .button.raised:hover {
+	box-shadow: 0 1px alpha(white, 0.05) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.03) inset,
+				0 -1px alpha(white, 0.02) inset,
+				0 -2px alpha(white, 0.02) inset;
+
+	background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 1.02),
+                                      shade(@button_gradient_color_a, 1.02) 49%,
+                                      shade(@button_gradient_color_a, 0.98) 51%,
+                                      shade(@button_gradient_color_a, 0.98)
+                                      );                                  
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:active,
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:hover:active,
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .button.raised:active,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .button.raised:active:hover {
+	background-image: linear-gradient(to bottom,
+                                      shade(@button_gradient_color_a, 0.90),
+                                      shade(@button_gradient_color_a, 0.90) 49%,
+                                      shade(@button_gradient_color_a, 0.90) 51%,
+                                      shade(@button_gradient_color_a, 0.90)
+                                      );
+	border-image: url("borders/button/button-notebook-active.svg") 4 3 4 3 / 4px 3px 4px 3px stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+	box-shadow: 0 1px alpha(black, 0.08) inset,
+				0 2px alpha(black, 0.04) inset,
+				0 3px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.02) inset,
+				-2px 0 alpha(black, 0.01) inset,
+
+				1px 0 alpha(black, 0.04) inset,
+				2px 0 alpha(black, 0.02) inset,
+				3px 0 alpha(black, 0.01) inset;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .toolbar:nth-child(2) GtkToggleButton.button:hover:backdrop,
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .button.raised:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:backdrop:hover,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:backdrop:hover,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .button.raised:backdrop:hover {
+	background-color: @button_gradient_color_a;
+	background-image: none;
+	border-image: url("borders/button/button-notebook-backdrop.svg") 3 3 4 3 / 3px 3px 4px 3px stretch;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:backdrop:active,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:backdrop:active,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:backdrop:hover:active,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:backdrop:hover:active {
+	background-color: mix(@button_gradient_color_a, @theme_unfocused_selected_bg_color, 0.8);
+	background-image: none;
+	border-image: url("borders/button/button-notebook-backdrop.svg") 3 3 4 3 / 3px 3px 4px 3px stretch;
+	color: shade(@theme_unfocused_fg_color, 0.8);
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .button.raised {
+	padding: 2px;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:active,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:active,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:hover:active,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:hover:active {
+	background-image: linear-gradient(to bottom,
+                                      mix(@button_gradient_color_a, @theme_selected_bg_color, 0.8),
+                                      mix(@button_gradient_color_a, @theme_selected_bg_color, 0.8) 49%,
+                                      shade(mix(@button_gradient_color_a, @theme_selected_bg_color, 0.8), 0.95) 51%,
+                                      shade(mix(@button_gradient_color_a, @theme_selected_bg_color, 0.8), 0.95)
+                                      );
+    }
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:first-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:first-child,
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:first-child:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:first-child:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:first-child:backdrop:hover,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:first-child:backdrop:hover {
+	border-right-width: 0;
+    border-image-width: 3px 0 4px 3px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+
+    box-shadow: 0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(black, 0.08) inset,
+				0 -1px alpha(white, 0.02) inset;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:last-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:last-child,
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:last-child:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:last-child:backdrop,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:last-child:backdrop:hover,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:last-child:backdrop:hover  {
+	border-left-width: 0;
+    border-image-width: 3px 3px 4px 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+
+    box-shadow: 0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+				1px 0 alpha(white, 0.09) inset,
+				0 -1px alpha(white, 0.02) inset;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:active:first-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:active:first-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:active:hover:first-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:active:hover:first-child {
+	box-shadow: 0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+				-1px 0 alpha(black, 0.26) inset,
+				0 -1px alpha(white, 0.02) inset;
+}
+
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:active:last-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:active:last-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .linked .button:active:hover:last-child,
+NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar .raised .button:active:hover:last-child {
+	box-shadow: 0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.02) inset,
+				0 3px alpha(white, 0.01) inset,
+				1px 0 alpha(white, 0.09) inset,
+				0 -1px alpha(white, 0.02) inset;
+}
+
+/* Brasero */
+BraseroLayout GtkPaned {
+	background-image: url("assets/delorean-dark-bg.png");
+	}
+
+BraseroProject* GtkEventBox {
+	background-image: linear-gradient(to bottom,
+										@notebook_color,
+										@notebook_color
+										);
+	}
+
+/* evolution */
+/*
+EMailShellContent .entry {
+	background-image:none;
+	background-color: darker(@insensitive_bg_color);
+}*/
+
+
+
+/* *Evolution Mail* */
+/*
+MessageList *,
+MessageList {
+	color: @theme_text_color;
+	background-color: red;
+	background-image: none;
+}*/
+
+EMailPanedView.vertical > EPaned.vertical > GtkScrolledWindow,
+EMailPanedView.vertical > EPaned.vertical > GtkScrolledWindow > MessageList  {
+	color: @theme_text_color;
+	background-color: darker(@insensitive_bg_color);
+	background-image: none;
+}
+
+/* gedit */
+
+GeditWindow .pane-separator,
+GeditWindow .pane-separator:hover {
+    border-width: 0 ;
+    border-style: solid;
+    border-color: @borders;
+    background-color: transparent;
+    color: @borders;
+}
+
+GeditPanel.vertical .title {
+    border-style: none;
+    padding: 7px 0 6px 3px;
+}
+
+GeditDocumentsPanel .view {
+    background-color: @notebook_color;
+}
+
+GeditDocumentsPanel .view:backdrop {
+    background-color: @sidebar_bg_unfocused;
+}
+
+GeditPanel .notebook {
+    background-color: @notebook_color;
+}
+
+GeditPanel.vertical .notebook {
+    padding: 0px;
+    border-width: 0px;
+}
+
+GeditPanel.horizontal .notebook {
+    padding: 0px;
+    border-width: 0;
+}
+
+GeditWindow .notebook {
+    border-width: 2px 0 2px 1px;
+    border-color: shade(@notebook_color, 0.60);
+    border-top-color: shade(@notebook_color, 1.1);
+    border-left-color: shade(@notebook_color, 1.1);
+}
+
+GeditWindow .notebook.view,
+GeditWindow .notebook .view {
+	background-color: @notebook_color;
+}
+
+GeditPanel .notebook.view,
+GeditPanel .notebook .view,
+GeditPanel .notebook.view:backdrop,
+GeditPanel .notebook .view:backdrop {
+	background-color: darker(@notebook_color);
+}
+
+GeditWindow .notebook.view:backdrop,
+GeditWindow .notebook .view:backdrop {
+	background-color: @notebook_color;
+}
+
+GeditStatusMenuButton {
+    text-shadow: none;
+}
+
+GeditStatusMenuButton.button:backdrop,
+GeditStatusMenuButton.button:backdrop:hover,
+GeditStatusMenuButton.button,
+GeditStatusMenuButton.button:hover,
+GeditStatusMenuButton.button:active,
+GeditStatusMenuButton.button:active:hover {
+    border-image: none;
+    border-style: solid;
+    border-width: 0 1px;
+    border-radius: 0;
+    padding: 1px 8px 2px 4px;
+}
+
+GeditStatusMenuButton.button:hover,
+GeditStatusMenuButton.button:active,
+GeditStatusMenuButton.button:active:hover {
+    border-color: @borders;
+}
+
+GeditStatusMenuButton.button:active {
+    background-image: linear-gradient(to bottom,
+                                      @borders,
+                                      shade(@theme_bg_color, 0.95));
+    background-color: transparent;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 1px @button_text_shadow;
+}
+
+GeditStatusMenuButton.button:backdrop,
+GeditStatusMenuButton.button:backdrop:hover {
+    border-color: @unfocused_borders;
+}
+
+GeditViewFrame .gedit-search-slider,
+GeditViewFrame .gedit-search-slider:focus {
+    background-color: @notebook_color;
+    padding: 6px;
+    border-color: shade(@notebook_color, 0.65);
+    border-radius: 0 0 3px 3px;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-image: none;
+}
+
+GeditViewFrame .gedit-search-slider .linked .button,
+GeditViewFrame .gedit-search-slider .linked .button:hover {
+	padding: 6px 5px 5px 5px;
+	 border-image: url("borders/button/button-notebook.svg") 3 3 4 3 / 3px 0px 4px 0px stretch;
+	 border-width: 1px 0px 2px 0px;
+	 border-radius: 0;
+	 box-shadow:  1px 0   alpha(black, 0.26) inset,
+				 -1px 0   alpha(black, 0.26) inset;
+}
+
+GeditViewFrame .gedit-search-slider .linked .button:active,
+GeditViewFrame .gedit-search-slider .linked .button:active:hover {
+    border-image: url("borders/button/button-notebook-active.svg") 4 3 4 3 / 4px 0px 4px 0px stretch;
+    border-width: 1px 0px 2px 0px;
+    border-radius: 0;
+    box-shadow: 0 1px alpha(black, 0.08) inset,
+				0 2px alpha(black, 0.04) inset,
+				0 3px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.26) inset,
+
+				1px 0 alpha(black, 0.26) inset,
+				2px 0 alpha(black, 0.02) inset,
+				3px 0 alpha(black, 0.01) inset;
+}
+
+GeditViewFrame .gedit-search-slider .linked .button:first-child,
+GeditViewFrame .gedit-search-slider .linked .button:first-child:hover {
+	border-width: 1px 0px 2px 0px;
+	border-image-width: 3px 0px 4px 0px;
+	border-radius: 0 0 0 0;
+}
+
+GeditViewFrame .gedit-search-slider .linked .button:first-child:active,
+GeditViewFrame .gedit-search-slider .linked .button:first-child:active:hover {
+	border-width: 1px 0px 2px 0px;
+	border-image-width: 4px 0px 4px 0px;
+	border-radius: 0 0 0 0;
+}
+
+GeditViewFrame .gedit-search-slider .linked .button:last-child,
+GeditViewFrame .gedit-search-slider .linked .button:last-child:hover {
+	padding: 6px 4px 5px 4px;
+	border-width: 1px 1px 2px 0px;
+	border-image-width: 3px 3px 4px 0px;
+	border-radius: 0 2px 2px 0;
+	box-shadow:  1px 0   alpha(white, 0.04) inset,
+				-1px 0   alpha(black, 0.16) inset;
+}
+
+GeditViewFrame .gedit-search-slider .linked .button:last-child:active,
+GeditViewFrame .gedit-search-slider .linked .button:last-child:active:hover {
+	padding: 6px 4px 5px 4px;
+	border-width: 1px 1px 2px 0px;
+	border-image-width: 4px 3px 4px 0px;
+	border-radius: 0 2px 2px 0;
+	box-shadow: 0 1px alpha(black, 0.08) inset,
+				0 2px alpha(black, 0.04) inset,
+				0 3px alpha(black, 0.02) inset,
+
+				-1px 0 alpha(black, 0.16) inset,
+				-2px 0 alpha(black, 0.01) inset,
+
+				1px 0 alpha(black, 0.04) inset,
+				2px 0 alpha(black, 0.02) inset,
+				3px 0 alpha(black, 0.01) inset;
+}
+
+GeditViewFrame .gedit-search-slider .entry,
+GeditViewFrame .gedit-search-slider .entry:focus {
+	border-image: url("borders/button/entry-linked-2.svg") 3 3 4 3 / 3px 0px 4px 3px stretch;
+    border-width: 1px 0 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+	border-radius: 2px 0 0 2px;
+	box-shadow: none;
+}
+
+GeditViewFrame .gedit-search-slider .not-found,
+GeditViewFrame .gedit-search-slider .not-found:focus {
+    color: @gedit_not_found_fg;
+    background-image: none;
+    background-color: @gedit_not_found_bg;
+    border-image: none;
+    border-width: 0 ;
+    border-style: solid;
+    border-color: transparent;
+	border-radius: 2px 0 0 2px;
+	box-shadow: inset 1px  1px shade(@gedit_not_found_bg, 0.9),
+				inset -1px -1px shade(@gedit_not_found_bg, 0.9);
+}
+
+GeditViewFrame .gedit-search-slider .not-found:selected,
+GeditViewFrame .gedit-search-slider .not-found:selected:focus {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+GeditFileBrowserWidget .primary-toolbar.toolbar  {
+    border-top: none;
+    border-bottom-color: #2f2f2f;
+    padding: 2px;
+}
+
+.gedit-search-entry-occurrences-tag {
+    color: shade (@theme_unfocused_fg_color, 0.8);
+    margin: 2px;
+    padding: 2px;
+}
+
+/* gnome-documents */
+.documents-dropdown,
+.documents-dropdown .view {
+    background-color: @theme_base_color;
+}
+
+.documents-dropdown.frame {
+    padding: 6px;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-image: none;
+    border-radius: 0 0 5px 5px;
+    border-color: shade(@theme_base_color, 0.95);
+}
+
+.documents-dropdown .view.radio,
+.documents-dropdown .view.radio:focused,
+.documents-dropdown .view.radio:selected {
+    background-image: none;
+    background-color: alpha(@theme_base_color, 0.0);
+}
+
+.documents-dropdown .view.radio:active,
+.documents-dropdown .view.radio:active:focused,
+.documents-dropdown .view.radio:active:prelight {
+    background-image: url("assets/sidebar-radio-checked.svg");
+}
+
+.documents-dropdown .view.radio:prelight {
+    background-image: url("assets/sidebar-radio-prelight.svg");
+}
+
+.documents-dropdown .view.radio:active:selected,
+.documents-dropdown .view.radio:active:selected:focused {
+    background-image: url("assets/sidebar-radio-selected.svg");
+}
+
+.documents-dropdown .view.radio:selected:prelight,
+.documents-dropdown .view.radio:selected:focused {
+    background-image: url("assets/sidebar-radio-selected-prelight.svg");
+}
+
+.documents-load-more.button {
+    border-image: none;
+    border-color: @borders;
+    border-width: 1px 0 0;
+    border-radius: 0;
+}
+
+.documents-scrolledwin.frame {
+    border-width: 1px 0 0;
+    border-radius: 0;
+}
+
+.documents-icon-bg {
+    background-color: @documents_emblem_bg;
+    border-radius: 4px;
+
+    color: @theme_base_color;
+}
+
+.documents-collection-icon {
+    background-color: @documents_collection_bg;
+    border-radius: 8px;
+}
+
+.documents-counter {
+    background-image: url('assets/dnd-counter.svg');
+    background-size: contain;
+    background-color: transparent;
+    color: @theme_base_color;
+    font: bold;
+}
+
+.documents-favorite.button:active,
+.documents-favorite.button:active:hover {
+    color: shade(@theme_selected_bg_color, 1.20);
+}
+
+.documents-entry-tag {
+    background-color: @entry_tag_bg;
+    color: @entry_tag_fg;
+
+    border-radius: 4px;
+    border-width: 0;
+
+    margin: 2px;
+    padding: 4px;
+}
+
+.documents-entry-tag:hover {
+    background-color: shade(@entry_tag_bg, 1.10);
+    color: @entry_tag_fg;
+}
+
+.documents-entry-tag.button,
+.documents-entry-tag.button:hover,
+.documents-entry-tag.button:active,
+.documents-entry-tag.button:active:hover {
+    background-color: transparent;
+    background-image: none;
+    border-image: none;
+    border-width: 0;
+}
+
+.documents-entry-tag.button:hover {
+    color: shade(@entry_tag_bg, 2.10);
+}
+
+/* baobab */
+
+.cell.baobab-level-cell,
+.cell.baobab-level-cell:hover,
+.cell.baobab-level-cell:selected,
+.cell.baobab-level-cell:selected:hover {
+    border-color: #1a1a1a;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    background-color: #202020;
+}
+
+.cell.baobab-level-cell:backdrop,
+.cell.baobab-level-cell:hover:backdrop,
+.cell.baobab-level-cell:selected:backdrop,
+.cell.baobab-level-cell:selected:hover:backdrop {
+    border-color: #202020;
+}
+
+.cell.baobab-level-cell.fill-block,
+.cell.baobab-level-cell.fill-block:selected,
+.cell.baobab-level-cell.fill-block:selected:hover {
+    background-color: #edd400;
+}
+
+.cell.baobab-level-cell.fill-block.level-low,
+.cell.baobab-level-cell.fill-block.level-low:hover {
+    background-color: #73d216;
+}
+
+.cell.baobab-level-cell.fill-block.level-high,
+.cell.baobab-level-cell.fill-block.level-high:hover {
+    background-color: #cc0000;
+}
+
+.cell.baobab-level-cell.fill-block:backdrop,
+.cell.baobab-level-cell.fill-block:hover:backdrop,
+.cell.baobab-level-cell.fill-block.level-low:backdrop,
+.cell.baobab-level-cell.fill-block.level-high:backdrop {
+    background-color: @theme_unfocused_text_color;
+}
+
+.cell.baobab-cell-error {
+    color: @error_color;
+}
+
+.cell.baobab-cell-warning {
+    color: @warning_color;
+}
+
+.cell.baobab-cell-warning:selected,
+.cell.baobab-cell-error:selected {
+    color: @theme_selected_fg_color;
+}
+
+.cell.baobab-cell-warning:backdrop,
+.cell.baobab-cell-error:backdrop {
+    color: @theme_unfocused_text_color;
+}
+
+.cell.baobab-cell-warning:selected:backdrop,
+.cell.baobab-cell-error:selected:backdrop {
+    color: shade(@theme_unfocused_text_color, 1.3);
+}
+
+BaobabWindow.background GtkStack > GtkGrid > GtkScrolledWindow.frame {
+    border-radius: 0;
+    border-width: 0 1px 0 0;
+}
+/*
+BaobabWindow GtkInfoBar.warning,
+BaobabWindow GtkInfoBar.error {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: @borders;
+}*/
+
+BaobabRingschart {
+    background-color: @theme_bg_color;
+    padding: 13px 13px 13px 13px;
+}
+
+BaobabRingschart.subfolder-tip {
+    border-radius: 3px;
+    border-style: none;
+    padding: 3px 3px 3px 3px;
+
+    background-color: alpha(@theme_tooltip_bg_color, 0.90);
+    background-image: linear-gradient(to bottom,
+                                      alpha(@theme_tooltip_bg_color, 0.90),
+                                      alpha(@theme_tooltip_bg_color, 0.90)
+                                      );
+    color: @theme_tooltip_fg_color;
+
+    text-shadow: 1px 1px black;
+}
+
+/* epiphany */
+
+EphyToolbar .entry {
+	color: shade(@theme_text_color, 0.92);
+	border-radius: 2px;
+}
+
+EphyToolbar .entry:first-child,
+EphyToolbar .entry:focus:first-child,
+EphyToolbar .entry:backdrop:first-child {
+	border-image-source: url("borders/entry/ephy-entry.svg");
+    border-image-width: 4px 0 4px 4px;
+    border-right-width: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+EphyToolbar .entry:last-child,
+EphyToolbar .entry:focus:last-child,
+EphyToolbar .entry:backdrop:last-child {
+	border-image-source: url("borders/entry/ephy-entry.svg");
+    border-image-width: 4px 4px 4px 0;
+    border-left-width: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+EphyToolbar .entry:focus,
+EphyToolbar .entry:focus:first-child,
+EphyToolbar .entry:focus:last-child{
+	border-image-source: url("borders/button/entry-2.svg");
+	background-color: @entry_bg_focus;
+	background-image: none;
+	color: shade(@entry_text_focus_color, 0.78);
+}
+
+EphyToolbar .entry:backdrop,
+EphyToolbar .entry:backdrop:first-child,
+EphyToolbar .entry:backdrop:last-child {
+	border-image-source: url("borders/button/entry-backdrop.svg");
+    box-shadow: none;
+}
+
+EphyToolbar .entry:selected,
+EphyToolbar .entry:focus:selected {
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+}
+
+EphyToolbar .location-entry .button,
+EphyToolbar .location-entry .button:hover,
+EphyToolbar .location-entry .button:active,
+EphyToolbar .location-entry .button:active:hover,
+EphyToolbar .location-entry .button:backdrop,
+EphyToolbar .location-entry .button:backdrop:hover {
+    color: shade(@theme_selected_bg_color, 1.4);
+    -GtkButton-child-displacement-y: 0;
+    border-image-source: url("borders/entry/ephy-entry.svg");
+    border-image-slice: 4 4 4 4;
+    border-image-repeat: stretch;
+    border-width: 4px;
+    border-radius: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-shadow: 0 1px alpha(black, 0.02) inset,
+				0 2px alpha(black, 0.02) inset,
+				0 3px alpha(black, 0.01) inset,
+
+				-1px 0 alpha(black, 0.02) inset,
+				-2px 0 alpha(black, 0.01) inset;
+}
+
+EphyToolbar .location-entry .button:last-child,
+EphyToolbar .location-entry .button:hover:last-child,
+EphyToolbar .location-entry .button:active:last-child,
+EphyToolbar .location-entry .button:active:hover:last-child,
+EphyToolbar .location-entry .button:backdrop:last-child,
+EphyToolbar .location-entry .button:backdrop:hover:last-child {
+    border-image-width: 4px 4px 4px 0;
+    border-left-width: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+EphyToolbar .location-entry .button:first-child,
+EphyToolbar .location-entry .button:hover:first-child,
+EphyToolbar .location-entry .button:active:first-child,
+EphyToolbar .location-entry .button:active:hover:first-child,
+EphyToolbar .location-entry .button:backdrop:first-child,
+EphyToolbar .location-entry .button:backdrop:hover:first-child {
+    border-image-width: 4px 0 4px 4px;
+    border-right-width: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    /* flip the box-shadow division*/
+    box-shadow: 0 1px alpha(black, 0.02) inset,
+				0 2px alpha(black, 0.02) inset,
+				0 3px alpha(black, 0.01) inset,
+
+				1px 0 alpha(black, 0.02) inset,
+				2px 0 alpha(black, 0.02) inset,
+				3px 0 alpha(black, 0.01) inset;
+}
+
+EphyToolbar .location-entry .button:backdrop,
+EphyToolbar .location-entry .button:backdrop:first-child,
+EphyToolbar .location-entry .button:backdrop:hover,
+EphyToolbar .location-entry .button:backdrop:hover:first-child {
+    border-image-source: url("borders/button/entry-backdrop.svg");
+    box-shadow: none;
+    background-image: none;
+    background-color: @theme_unfocused_base_color;
+}
+
+EphyToolbar .location-entry .button,
+EphyToolbar .location-entry .button:hover {
+	icon-shadow: -1px -1px 1px alpha(black, 0.16);
+    background-image: -gtk-gradient(linear,
+                                    left top, left bottom,
+                                    from(@entry_bg),
+                                    to(@entry_bg));
+}
+
+EphyToolbar .location-entry .button:active,
+EphyToolbar .location-entry .button:active:hover {
+    background-image: -gtk-gradient(linear,
+                                    left top, left bottom,
+                                    from(shade(@entry_bg, 0.75)),
+                                    to(shade(@entry_bg, 0.65)));
+}
+
+EphyToolbar .location-entry .button:hover {
+    color: shade(@theme_selected_bg_color, 1.1);
+}
+
+EphyToolbar .location-entry .button:active,
+EphyToolbar .location-entry .button:active:hover {
+    color: @theme_fg_color;
+}
+/*
+EphyNotebook.notebook {
+    border-width: 1px 0 1px 0;
+    border-top-color: @notebook_color;
+}
+
+
+EphyNotebook.notebook tab {
+    border-width: 0;
+}*/
+
+
+EphyWindow .titlebar,
+EphyWindow .titlebar:backdrop {
+	border-width: 0;
+	border-style: none;
+	box-shadow: 0 1px #525252 inset;
+}
+
+EphyToolbar.toolbar .button {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#ephy-page-menu-button {
+	background-image: none;
+	background-color: transparent;
+	border-image: none;
+	border-style: none;
+	box-shadow: none;
+
+	color: shade(@special_color, 1.4);
+	icon-shadow: -1px -1px 1px alpha(black, 0.30);
+}
+
+#ephy-page-menu-button:hover {
+	color: shade(@special_color, 1.10);
+}
+
+#ephy-page-menu-button.active-menu {
+    background-image: none;
+    background-color: darker(@theme_bg_color);
+
+    border-image: none;
+    
+    border-color: shade(@menu_bg_color, 0.86);
+    border-bottom-color: darker(@theme_bg_color);
+    border-radius: 3px 3px 0 0;
+	box-shadow:  1px  0px alpha(white, 0.07) inset,
+				 0px  1px alpha(white, 0.11) inset,
+				-1px  0px alpha(black, 0.09) inset;
+    color: darker(@menu_fg_color);
+}
+
+#ephy-page-menu-button:backdrop {
+	color: @theme_unfocused_fg_color;
+	}
+
+/* * New Tab Button * */
+EphyToolbar .button:nth-child(3),
+EphyToolbar .button:nth-child(3):hover,
+EphyToolbar .button:nth-child(3):active,
+EphyToolbar .button:nth-child(3):active:hover,
+EphyToolbar .button:nth-child(3):backdrop,
+EphyToolbar .button:nth-child(3):backdrop:hover {
+	background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.06),
+                                      alpha(black, 0.06)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+	background-color: transparent;
+	/*box-shadow: inset 0 1px alpha(white, 0.07),
+				inset 0 2px alpha(white, 0.01);*/
+	box-shadow: inset 1px 1px alpha(black, 0.08),
+				inset 2px 2px alpha(black, 0.04);
+				
+	color: @theme_selected_fg_color;
+
+	padding: 3px;
+	border-image: url("borders/button/titlebar-button.svg") 3 4 4 3 / 3px 4px 4px 3px stretch;
+    border-radius: 3px;
+    border-width: 1px 2px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+EphyToolbar .button:nth-child(3):hover {
+	color: shade(@theme_selected_bg_color, 1.10);
+}
+
+EphyToolbar .button:nth-child(3):active {
+    color: shade(@theme_selected_bg_color, 1.40);
+}
+
+EphyToolbar .button:nth-child(3):active:hover {
+	icon-shadow: 1px  1px  0px alpha(black, 0.24),
+				 2px  2px  4px @theme_selected_bg_color,
+				-2px -2px  4px @theme_selected_bg_color;
+}
+
+EphyToolbar .button:nth-child(3):backdrop,
+EphyToolbar .button:nth-child(3):hover:backdrop {
+	color: @theme_unfocused_fg_color;
+	border-image: url("borders/button/titlebar-button-backdrop.svg") 3 4 4 3 / 3px 4px 4px 3px stretch;
+    border-radius: 3px;
+    border-width: 1px 2px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.0),
+                                      alpha(black, 0.0)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+	background-color: transparent;
+	box-shadow: none;
+	}
+
+/* close button--its not a titlebar button?? */
+EphyToolbar .button:nth-child(6) {
+	background-color: alpha(@error_color, 0.0);
+	background-image: linear-gradient(to bottom,
+                                      alpha(@error_color, 0.0),
+									  alpha(@error_color, 0.0)
+                                      );
+    border-image: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;                                 
+	box-shadow: none;
+	transition: 1ms linear;
+	color: shade(@error_color, 1.4);
+	icon-shadow: -1px -1px 1px alpha(black, 0.20),
+				  1px  1px 2px alpha(black, 0.08);
+}
+
+EphyToolbar .button:nth-child(6):hover {
+	background-image: linear-gradient(to bottom,
+                                      alpha(@error_color, 0.7),
+									  alpha(@error_color, 0.9)
+                                      );
+    background-color: transparent;
+    
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2a2a2a;
+    border-image: none;
+    
+    color:  @theme_fg_color;
+    icon-shadow: -1px -1px 2px alpha(black, 0.2),
+				  1px  1px 2px alpha(black, 0.2);
+				
+	box-shadow: inset  1px  1px alpha(white, 0.04),
+				inset  2px  2px alpha(white, 0.015);
+				
+	transition: 160ms ease-in-out;
+}
+
+EphyToolbar .button:nth-child(6):backdrop,
+EphyToolbar .button:nth-child(6):hover:backdrop {
+    background-image: none;
+    background-color: transparent;
+    color: @wm_unfocused_title;
+    border-image: none;
+	border-radius: 2px;
+    border-width: 1px;
+    
+    border-style: solid;
+    border-color: transparent;
+    
+    icon-shadow: none;
+    box-shadow: none;
+}
+
+EphyToolbar .button:nth-child(6):hover:backdrop,
+.header-bar.frame.titlebar .button.image-button.titlebutton:hover:backdrop {
+	color: @theme_unfocused_fg_color;
+}
+
+/** Back & Forward Buttons **/
+.linked EphyMiddleClickableButton.button.image-button,
+.linked EphyMiddleClickableButton.button.image-button:first-child,
+.linked EphyMiddleClickableButton.button.image-button:last-child,
+.linked EphyMiddleClickableButton.button.image-button:hover,
+.linked EphyMiddleClickableButton.button.image-button:active,
+.linked EphyMiddleClickableButton.button.image-button:active:hover,
+.linked EphyMiddleClickableButton.button.image-button:insensitive,
+.linked EphyMiddleClickableButton.button.image-button:insensitive:backdrop,
+.linked EphyMiddleClickableButton.button.image-button:backdrop,
+.linked EphyMiddleClickableButton.button.image-button:backdrop:hover {
+	background-image: none;
+	background-color: transparent;
+	
+	box-shadow: inset 0 1px alpha(black, 0.08),
+				inset 0 2px alpha(black, 0.04);
+				
+	color: shade(@theme_selected_bg_color, 1.4);
+
+	padding: 0px 6px;
+	border-image: none;
+	border-style: solid;
+	border-radius: 5px;
+    border-width: 1px;
+	border-color: transparent;
+	box-shadow: none;
+}
+/*
+.linked EphyMiddleClickableButton.button:first-child {
+	box-shadow: inset 1px 1px alpha(black, 0.08),
+				inset 2px 2px alpha(black, 0.04);
+}*/
+
+.linked EphyMiddleClickableButton.button:hover,
+.linked EphyMiddleClickableButton.button:first-child:hover,
+.linked EphyMiddleClickableButton.button:last-child:hover {
+	color: @theme_selected_fg_color;
+	box-shadow: inset  -1px  -1px alpha(black, 0.12),
+				inset   1px   1px alpha(white, 0.06),
+				inset   2px   2px alpha(white, 0.02),
+				inset   3px   3px alpha(white, 0.01);
+	icon-shadow: -1px -1px 2px alpha(black, 0.2),
+				  1px  1px 2px alpha(black, 0.2);
+	border-radius: 2px;
+    border-width: 1px;
+
+    border-style: solid;
+    border-color: #2a2a2a;
+    border-top-color: #323232;
+    border-left-color: #323232;
+    border-image: none;
+    background-image: linear-gradient(to bottom,
+                                      alpha(@theme_selected_bg_color, 0.7),
+									  alpha(@theme_selected_bg_color, 0.9)
+                                      );
+    background-color: transparent;
+    transition: border-radius 310ms ease,
+				background-image 280ms ease-in-out,
+				border 380ms ease;
+}
+
+.linked EphyMiddleClickableButton.button:active,
+.linked EphyMiddleClickableButton.button:first-child:active,
+.linked EphyMiddleClickableButton.button:last-child:active,
+.linked EphyMiddleClickableButton.button:active:hover,
+.linked EphyMiddleClickableButton.button:first-child:active:hover,
+.linked EphyMiddleClickableButton.button:last-child:active:hover {
+	color: shade(@theme_selected_bg_color, 1.60);
+	background-image: linear-gradient(to bottom,
+                                      alpha(@theme_selected_bg_color, 0.5),
+									  alpha(@theme_selected_bg_color, 0.7)
+                                      );
+	background-color: transparent;
+	border-color: #2a2a2a;
+    border-top-color: #282828;
+    border-left-color: #282828;
+	box-shadow: inset  -1px  -1px alpha(white, 0.04),
+				inset  -2px  -2px alpha(white, 0.015),
+				inset   1px   1px alpha(black, 0.08),
+				inset   2px   2px alpha(black, 0.04),
+				inset   3px   3px alpha(black, 0.02);
+	border-radius: 2px;
+}
+
+.linked EphyMiddleClickableButton.button:active:hover {
+icon-shadow: 1px  1px  0px alpha(black, 0.24),
+				 2px  2px  4px @theme_selected_bg_color,
+				-2px -2px  4px @theme_selected_bg_color;
+}
+
+.linked EphyMiddleClickableButton.button:backdrop,
+.linked EphyMiddleClickableButton.button:first-child:backdrop,
+.linked EphyMiddleClickableButton.button:last-child:backdrop {
+	color: @theme_unfocused_fg_color;
+	background-image: none;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.linked EphyMiddleClickableButton.button:active:backdrop {
+	color: @theme_unfocused_text_color;
+	icon-shadow: none;
+	background-image: none;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.linked EphyMiddleClickableButton.button:insensitive,
+.linked EphyMiddleClickableButton.button:active:insensitive,
+.linked EphyMiddleClickableButton.button:first-child:insensitive,
+.linked EphyMiddleClickableButton.button:last-child:insensitive,
+.linked EphyMiddleClickableButton.button:first-child:active:insensitive,
+.linked EphyMiddleClickableButton.button:last-child:active:insensitive  {
+	background-image: none;
+	background-color: transparent;
+	box-shadow: none;
+	border-color: transparent;
+}
+
+.linked EphyMiddleClickableButton.button *:insensitive,
+.linked EphyMiddleClickableButton.button:active *:insensitive,
+.linked EphyMiddleClickableButton.button:first-child *:insensitive,
+.linked EphyMiddleClickableButton.button:last-child *:insensitive,
+.linked EphyMiddleClickableButton.button:first-child:active *:insensitive,
+.linked EphyMiddleClickableButton.button:last-child:active *:insensitive {
+	color: #464646;
+}
+
+.linked EphyMiddleClickableButton.button:insensitive:backdrop,
+.linked EphyMiddleClickableButton.button:first-child:insensitive:backdrop,
+.linked EphyMiddleClickableButton.button:last-child:insensitive:backdrop {
+	background-image: none;
+	background-color: transparent;
+	box-shadow: none;
+	border-color: transparent;
+}
+
+.linked EphyMiddleClickableButton.button *:insensitive:backdrop,
+.linked EphyMiddleClickableButton.button:first-child *:insensitive:backdrop,
+.linked EphyMiddleClickableButton.button:last-child *:insensitive:backdrop {
+	color: @unfocused_insensitive_fg_color;
+}
+
+
+/* Most Visited Window Background */
+
+EphyWindow.background EphyEmbed.vertical EphyOverview .documents-main-view {
+    background-color: transparent;
+}
+
+EphyOverview GtkScrolledWindow {
+    background-color: transparent;
+    background-image: url("assets/Toolbar-op80.png");
+}
+
+/*****/
+
+EphyOverview GtkScrolledWindow:backdrop {
+    background-color: @theme_unfocused_base_color;
+}
+
+/* sets top and bottom borders on the main scrolled window for toolbar visual
+ * division and search/downloadbar */
+EphyWindow.background EphyEmbed.vertical GtkScrolledWindow.frame {
+    border-color: @borders;
+    border-width: 5px 0;
+    border-radius: 0;
+}
+
+/* removes any border from the overview scrolled window, since it's overlaid */
+EphyWindow.background EphyEmbed.vertical EphyOverview .documents-scrolledwin {
+    border-style: none;
+}
+
+/* remove top and bottom borders from the main scrolled window when inside a notebook tab */
+EphyWindow.background EphyNotebook.notebook EphyEmbed.vertical GtkScrolledWindow {
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+/* remove bottom borders from the  main scrolled window when no bars at the bottom of the screen are shown */
+EphyWindow.background EphyNotebook:last-child EphyEmbed.vertical GtkScrolledWindow,
+EphyWindow.background EphyNotebook.notebook:last-child {
+    border-bottom-width: 0;
+}
+
+/* Gnome Contacts */
+
+/* Line at top in contacts pane, similar to .documents-scrolledwin.frame */
+.contacts-spinner.frame {
+ border-width: 0 0px 0 0;
+ border-style: solid;
+ border-color: @borders;
+ border-image: none;
+ border-radius: 0;
+ padding: 0;
+}
+
+ContactsWindow,
+ContactsContactPane .frame,
+ContactsContactPane.frame {
+	background-color: @notebook_color;
+	background-image: url("assets/delorean-dark-bg.png");
+	border-image: none;
+}
+
+/* Background color in contacts pane, similar to .documents-main-view.view */
+ContactsWindow,
+.contacts-main-view.view {
+ background-color: @notebook_color;
+ /*background-image: url("assets/delorean-dark-light20-bg.png");*/
+}
+
+ContactsListPane GtkScrolledWindow,
+ContactsViewContactDataRow,
+ContactsView.list,
+ContactsListPane GtkScrolledWindow:backdrop,
+ContactsViewContactDataRow:backdrop,
+ContactsView.list:backdrop {
+	background-image: none;
+	background-color: @theme_bg_color;
+	border-style:solid;
+    border-width: 0;
+    border-left-width: 3px;
+    border-color:@theme_bg_color;
+}
+
+ContactsViewContactDataRow:selected,
+ContactsViewContactDataRow:selected:backdrop {
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.06),
+                                      alpha(white, 0.06)
+                                      ),
+                      linear-gradient(to bottom,
+                                      @theme_bg_color,
+                                      @theme_bg_color
+                                      );
+    border-style:solid;
+    border-width: 0;
+    border-left-width: 3px;
+    border-color:@theme_selected_fg_color;
+    color: @theme_selected_fg_color;
+}
+
+ContactsViewContactDataRow:selected:backdrop {
+	color: @theme_unfocused_fg_color;
+	border-color:@theme_unfocused_fg_color;
+	}
+
+ContactsListPane* GtkSeparator,
+ContactsListPane* .separator.horizontal,
+ContactsListPane* .separator {
+	color: shade(@theme_bg_color, 1.2);
+
+    -GtkMenuItem-horizontal-padding: 0;
+    -GtkWidget-wide-separators: false;
+    -GtkWidget-separator-width: 0;
+	-GtkWidget-separator-height: 0;
+ background-color:shade(@theme_bg_color, 0.96);
+ background-image:  linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.96),
+                                      shade(@theme_bg_color, 0.96)
+										);
+	border-style: none;
+	border-image: none;
+}
+
+ContactsListPane* GtkSeparator:backdrop,
+ContactsListPane* .separator.horizontal:backdrop,
+ContactsListPane* .separator:backdrop {
+	color: @theme_bg_color;
+}
+
+ContactsListPane.frame {
+	border-width: 0 1px 0 0;
+	border-color: shade(@notebook_color, 1.16);
+	border-image: none;
+}
+
+.contacts-suggestion {
+ background-color: #626262;
+ border-radius: 4px;
+}
+
+/* Border on the right in the left menu toolbar */
+.contacts-left-header-bar:dir(ltr) {
+ border-right-width: 1px;
+}
+
+.contacts-left-header-bar:dir(rtl) {
+ border-left-width: 1px;
+}
+
+.contacts-left-header-bar:dir(ltr),
+.contacts-right-header-bar:dir(rtl) {
+  border-top-right-radius: 0;
+}
+
+.contacts-right-header-bar:dir(ltr),
+.contacts-left-header-bar:dir(rtl) {
+  border-top-left-radius: 0;
+}
+
+.contacts-avatar-frame {
+ background-color: transparent;
+ background-image: url("assets/delorean-dark-light20-bg.png");
+}
+
+.contacts-avatar-frame.frame {
+ border-width: 0px;
+ border-style: solid;
+ border-color: transparent;
+ border-image: none;
+ border-radius: 0;
+ padding: 0;
+}
+
+.main-avatar-frame.frame {
+ border-width: 1px;
+ border-style: solid;
+ border-color: @borders;
+ border-radius: 6px;
+}
+
+/* Primary toolbar with no line at top to avoid conflicts with frame border */
+ContactsWindow .primary-toolbar.toolbar {
+	border-width: 0 0 1px 0;
+	border-color: shade(@theme_bg_color, 0.8);
+	background-image: url("assets/delorean-dark-bg.png");
+	background-color: @theme_bg_color;
+	box-shadow: none;
+}
+
+.contacts-button:active {
+ border-color: #000000;
+ border-image: none;
+}
+
+.contacts-entry {
+ box-shadow: none;
+ border-image: none;
+ border-width: 1px;
+ border-radius: 4px;
+ border-style: solid;
+ border-color: #212121;
+ background-image: none;
+ background-color: @entry_bg;
+}
+
+.contacts-entry:focus {
+	background-image: none;
+	border-image: none;
+	background-color: @entry_bg_focus;
+	border-width: 1px;
+	border-style: solid;
+    border-color: #212121;
+}
+
+.contacts-entry:selected,
+.contacts-entry:selected:focus {
+background-image: none;
+border-image: none;
+ background-color: @theme_selected_bg_color;
+ color: @theme_selected_fg_color;
+}
+
+.contacts-entry.contacts-postal-entry {
+ border-radius: 0 0 0 0;
+ border-width: 1px 1px 0 1px;
+}
+
+.contacts-entry.contacts-postal-entry:nth-child(first) {
+ border-radius: 4px 4px 0 0;
+}
+
+.contacts-entry.contacts-postal-entry:nth-child(last) {
+ border-radius: 0 0 4px 4px;
+ border-width: 1px;
+}
+
+.button.contacts-square {
+ padding: 0px;
+}
+
+.contacts-combo .button {
+ background-image: none;
+ background-color: @theme_selected_bg_color;
+}
+
+.contacts-combo .button:hover {
+ background-image: none;
+ background-color: shade(@theme_selected_bg_color,1.2);
+}
+
+.toolbar.contacts-edit-toolbar {
+  padding: 6px;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: @borders;
+  border-image: none;
+
+  background-color: transparent;
+	background-image: url("assets/delorean-dark-bg.png");
+}
+
+.toolbar.contacts-edit-toolbar .button {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.toolbar.contacts-selection-toolbar {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #323232;
+  border-image: none;
+   background-color: transparent;
+	background-image: url("assets/delorean-dark-bg.png");
+}
+
+.contacts-watermark {
+  color: #bebebe;
+  text-shadow: 1px 1px alpha(white, 0.6);
+}
+
+/* gnome-photos */
+
+.photos-icon-bg {
+  icon-shadow: 0 1px #000000;
+}
+
+/* Gucharmap */
+GucharmapChartable:active,
+GucharmapChartable:focus,
+GucharmapChartable:selected {
+ background-color: @theme_selected_bg_color;
+ color: @theme_selected_fg_color;
+}
+
+/* evince */
+EvWindow.background > GtkBox.vertical > GtkPaned.horizontal > GtkBox.vertical > GtkScrolledWindow.frame {
+    border-width: 0;
+    border-radius: 0;
+}
+
+EvWindow.background EvSidebar.vertical .frame {
+    border-width: 1px 0 0;
+    border-radius: 0;
+}
+
+EvWindow.background EvSidebar.vertical .notebook {
+    border-width: 1px 0 0;
+}
+
+EvWindow.background EvSidebarAnnotations.vertical GtkToolPalette > GtkToolItemGroup > .button {
+    border-image: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: @borders;
+}
+
+EvWindow.background EvSidebar.vertical .notebook .frame {
+    border-width: 0;
+}
+
+EvWindow .pane-separator,
+EvWindow .pane-separator:hover {
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: @borders;
+    background-color: shade(@theme_bg_color, 0.95);
+    color: @borders;
+}
+
+EvWindow.background EggFindBar.toolbar {
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: @borders;
+}
+
+/* gcalctool */
+
+MathWindow.background > GtkBox.vertical > GtkBox.vertical > GtkScrolledWindow {
+    padding: 4px;
+    background-color: shade(@theme_base_color, 0.96);
+    border-radius: 3px;
+}
+
+MathWindow.background > GtkBox.vertical > GtkBox.vertical > GtkScrolledWindow * {
+    background-color: @theme_base_color;
+    padding: 0px;
+}
+
+MathWindow.background > GtkBox.vertical > GtkBox.vertical > GtkScrolledWindow *:selected {
+    background-color: @theme_selected_bg_color;
+}
+
+MathWindow.background > GtkBox.vertical > GtkBox.vertical > GtkScrolledWindow:backdrop {
+    padding: 4px;
+    background-color:  @theme_unfocused_base_color;
+    border-radius: 3px;
+}
+
+MathWindow .frame {
+	padding: 			 1px;
+    border-width: 		 1px;
+	border-radius: 		 2px;
+    border-style: 		 solid;
+	border-top-color: 	 alpha(#000, 0.12);
+	border-left-color: 	 alpha(#fff, 0.12);
+	border-right-color:  alpha(#fff, 0.12);
+	border-bottom-color: alpha(#fff, 0.16);
+	border-image: 		 none;
+}
+
+MathWindow .button {
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.03),
+                                      alpha(white, 0.02) 49%,
+                                      alpha(white, 0.00) 50%,
+                                      alpha(white, 0.00)
+                                      ),
+                      url("assets/delorean-dark-light40-bg.png");
+}
+
+MathWindow .button:hover {
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.05),
+                                      alpha(white, 0.04) 49%,
+                                      alpha(white, 0.02) 50%,
+                                      alpha(white, 0.02)
+                                      ),
+                      url("assets/delorean-dark-light40-bg.png");
+}
+
+MathWindow .button:active,
+MathWindow .button:hover:active {
+	background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.06),
+                                      alpha(black, 0.06)
+                                      ),
+                     url("assets/delorean-dark-light20-bg.png");
+}
+
+/* Synaptic Package Manager */
+GtkWindow > GtkVBox > GtkHPaned:insensitive,
+GtkWindow > GtkVBox > GtkHPaned:insensitive:backdrop * { /*sets the background for insensiteve left bottom button pane*/
+	background-color: @insensitive_bg_color;
+    background-image: url("assets/delorean-backdrop-bg.png");
+    background-repeat: repeat;
+    background-position: top left;
+}

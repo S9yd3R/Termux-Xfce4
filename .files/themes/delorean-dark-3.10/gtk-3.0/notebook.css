@@ -1,0 +1,647 @@
+/*********************
+ * nautilus notebook *
+ ********************/
+.notebook,
+.notebook:backdrop {
+-GtkNotebook-tab-overlap: 24;
+engine: unico;
+
+    border-radius: 2px;
+    padding: 0px;
+    background-clip: border-box;
+
+    background-color: @notebook_color;
+    
+    border-width: 1px;
+    border-style: solid;
+
+    border-color: shade(@notebook_color, 0.60);
+    border-top-color: #4d4d4d;
+    border-left-color: #4d4d4d;
+
+	/*box-shadow: 0 1px 3px 1px alpha(black, 0.3);*/
+}
+
+.notebook:backdrop {
+	border-color: @notebook_color;
+	border-top-color: #3d3d3d;
+    border-left-color: #3d3d3d;
+}
+
+.notebook tab,
+.notebook tab.bottom {
+    box-shadow: none;
+    background-clip: padding-box;
+    border-style: solid;
+    -unico-focus-border-color: transparent;
+    -unico-focus-fill-color: transparent;
+
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.34),
+                                      alpha(black, 0.34)
+                                      ),
+                      linear-gradient(to bottom,
+                                      #393939,
+                                      #393939
+                                      );
+                                      
+}
+
+.notebook tab:backdrop {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.34),
+                                      alpha(black, 0.34)
+                                      ),
+                      linear-gradient(to bottom,
+                                      #393939,
+                                      #393939
+                                      );                  
+}
+
+.notebook tab:active {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      #393939,
+                                      #393939
+                                      );
+    color: @theme_fg_color;
+}
+
+.notebook tab:active:backdrop {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      #393939,
+                                      #393939
+                                      );
+}
+
+.notebook tab GtkLabel {
+    padding: 1px 4px 1px;
+}
+
+.notebook tab {
+    color: shade (@theme_bg_color, 0.48);
+}
+
+.notebook tab.top,
+.notebook tab.top:backdrop {
+	border-width: 5px 22px 3px 22px;
+    padding: 2px 24px 1px 24px;
+}
+
+.notebook tab.top:active,
+.notebook tab.top:active:backdrop {
+    padding: 3px 24px 1px 24px;
+}
+
+.notebook tab.bottom {
+    border-width: 3px 22px 5px 22px;
+    padding: 1px 24px 3px 24px;
+}
+
+.notebook tab.bottom:active {
+    padding: 1px 24px 3px 24px;
+}
+
+.notebook tab.right {
+    border-width: 22px 5px 22px 3px;
+    padding: 24px 1px 24px 3px;
+}
+
+.notebook tab.right:active {
+    padding: 24px 1px 24px 3px;
+}
+
+.notebook tab.left {
+    border-width: 22px 3px 22px 5px;
+    padding: 24px 3px 24px 1px;
+}
+
+.notebook tab.left:active {
+    padding: 24px 3px 24px 1px;
+}
+
+.notebook tab .button {
+    padding: 0;
+}
+
+/* top */
+.notebook tab {
+    border-image: url("assets/tab-top-4.svg") 5 22 3 22 / 5px 22px 3px 22px stretch;
+}
+
+.notebook tab:backdrop {
+    border-image: url("assets/tab-top-4-backdrop.svg") 5 22 3 22 / 5px 22px 3px 22px stretch;
+}
+
+
+
+.notebook tab.top:active {
+    border-image: url("assets/tab-top-active-4.svg") 5 22 3 22 / 5px 22px 3px 22px stretch;
+}
+
+.notebook tab.top:active:backdrop {
+    border-image: url("assets/tab-top-active-4-backdrop.svg") 5 22 3 22 / 5px 22px 3px 22px stretch;
+}
+
+
+/* bottom */
+.notebook tab.bottom {
+    border-image: url("assets/tab-bottom-4.svg") 3 22 5 22 / 3px 22px 5px 22px stretch;
+}
+
+.notebook tab.bottom:backdrop {
+    border-image: url("assets/tab-bottom-4-backdrop.svg") 3 22 5 22 / 3px 22px 5px 22px stretch;
+}
+
+
+
+.notebook tab.bottom:active {
+    border-image: url("assets/tab-bottom-active-4.svg") 3 22 5 22 / 3px 22px 5px 22px stretch;
+}
+
+.notebook tab.bottom:active:backdrop {
+    border-image: url("assets/tab-bottom-active-4-backdrop.svg") 3 22 5 22 / 3px 22px 5px 22px stretch;
+}
+
+
+/* right */
+.notebook tab.right {
+    border-image: url("assets/tab-right-4.svg") 22 5 22 3 / 22px 5px 22px 3px stretch;
+}
+
+.notebook tab.right:backdrop {
+    border-image: url("assets/tab-right-4-backdrop.svg") 22 5 22 3 / 22px 5px 22px 3px stretch;
+}
+
+
+
+.notebook tab.right:active {
+    border-image: url("assets/tab-right-active-4.svg") 22 5 22 3 / 22px 5px 22px 3px stretch;
+}
+
+.notebook tab.right:active:backdrop {
+    border-image: url("assets/tab-right-active-4-backdrop.svg") 22 5 22 3 / 22px 5px 22px 3px stretch;
+}
+
+
+/* left */
+.notebook tab.left {
+    border-image: url("assets/tab-left-4.svg") 22 3 22 5 / 22px 3px 22px 5px stretch;
+}
+
+.notebook tab.left:backdrop {
+    border-image: url("assets/tab-left-4-backdrop.svg") 22 3 22 5 / 22px 3px 22px 5px stretch;
+}
+
+
+
+.notebook tab.left:active {
+    border-image: url("assets/tab-left-active-4.svg") 22 3 22 5 / 22px 3px 22px 5px stretch;
+}
+
+.notebook tab.left:active:backdrop {
+    border-image: url("assets/tab-left-active-4-backdrop.svg") 22 3 22 5 / 22px 3px 22px 5px stretch;
+}
+
+/*******************
+ * Gnome Terminal *
+ * ************** */
+TerminalWindow GtkNotebook.notebook tab.top:active,
+TerminalWindow GtkNotebook.notebook tab.top:active:backdrop {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      #121212,
+                                      #121212
+                                      );
+}
+ 
+TerminalWindow GtkNotebook.notebook tab.top:active,
+TerminalWindow GtkNotebook.notebook tab.top:active:backdrop {
+    border-image: url("assets/tab-top-active-terminal.svg") 5 22 3 22 / 5px 22px 3px 22px stretch;
+} 
+
+/*********************
+ * nautilus notebook *
+ ********************/
+NautilusNotebook.notebook,
+EphyNotebook.notebook,
+NautilusNotebook.notebook:backdrop,
+EphyNotebook.notebook:backdrop {
+-GtkNotebook-tab-overlap: 16;
+engine: unico;
+
+    border-radius: 2px;
+    padding: 0px;
+    background-clip: border-box;
+    border-color: shade (@theme_bg_color, 0.82);
+    border-width: 1px;
+    border-top-width: 0;
+    border-style: solid;
+
+    border-color: transparent;
+
+    border-color: shade(@notebook_color, 1.25);
+    border-top-color: shade(@notebook_color, 1.25);
+    border-left-color: shade(@notebook_color, 0.6);
+
+	box-shadow: 0 -1px 3px 1px alpha(black, 0.3);
+
+    background-color: @notebook_color;
+}
+
+NautilusNotebook.notebook:backdrop,
+EphyNotebook.notebook:backdrop {
+	border-color: @notebook_color;
+	border-top-color: #3d3d3d;
+    border-left-color: #3d3d3d;
+}
+
+EphyNotebook.notebook,
+EphyNotebook.notebook:backdrop {
+    border-width: 1px 0 1px 0;
+    border-top-color: @notebook_color;
+    box-shadow: none;
+}
+
+
+NautilusNotebook.notebook tab.top,
+EphyNotebook.notebook tab.top,
+NautilusNotebook.notebook tab.top:backdrop,
+EphyNotebook.notebook tab.top:backdrop {
+    box-shadow: none;
+    background-image: none;
+    background-color: alpha(black, 0.32);
+    background-clip: padding-box;
+    
+    border-style: solid;
+    -unico-focus-border-color: transparent;
+    -unico-focus-fill-color: transparent;
+
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(black, 0.18),
+                                      alpha(black, 0.18)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+    border-width: 7px 9px 9px 9px;                  
+}
+
+NautilusNotebook.notebook tab.top:active,
+EphyNotebook.notebook tab.top:active,
+NautilusNotebook.notebook tab.top:active:backdrop,
+EphyNotebook.notebook tab.top:active:backdrop {
+    background-color: transparent;
+    background-image: url("assets/delorean-dark-bg.png");
+    color: @theme_fg_color;
+    border-width: 7px 9px 7px 9px;
+}
+
+NautilusNotebook.notebook tab:nth-child(first):active,
+EphyNotebook.notebook tab:nth-child(first):active,
+NautilusNotebook.notebook tab:nth-child(first):active:backdrop,
+EphyNotebook.notebook tab:nth-child(first):active:backdrop {
+	border-width: 7px 9px 7px 15px;
+}
+
+NautilusNotebook.notebook tab:nth-child(last):active,
+EphyNotebook.notebook tab:nth-child(last):active,
+NautilusNotebook.notebook tab:nth-child(last):active:backdrop,
+EphyNotebook.notebook tab:nth-child(last):active:backdrop {
+	border-width: 7px 15px 7px 9px;
+}
+
+
+NautilusNotebook.notebook tab GtkLabel,
+EphyNotebook.notebook tab GtkLabel,
+NautilusNotebook.notebook tab GtkLabel:backdrop,
+EphyNotebook.notebook tab GtkLabel:backdrop {
+    padding: 1px 4px 2px;
+}
+
+NautilusNotebook.notebook tab,
+EphyNotebook.notebook tab,
+NautilusNotebook.notebook tab:backdrop,
+EphyNotebook.notebook tab:backdrop {
+    color: shade (@theme_bg_color, 0.48);
+}
+
+NautilusNotebook.notebook tab.top,
+EphyNotebook.notebook tab.top,
+NautilusNotebook.notebook tab.top:backdrop,
+EphyNotebook.notebook tab.top:backdrop {
+    padding: 3px 16px 3px 16px;
+}
+
+NautilusNotebook.notebook tab.top:nth-child(first),
+EphyNotebook.notebook tab.top:nth-child(first),
+NautilusNotebook.notebook tab.top:nth-child(first):backdrop,
+EphyNotebook.notebook tab.top:nth-child(first):backdrop {
+    padding: 3px 16px 3px 16px;
+}
+
+NautilusNotebook.notebook tab.top:nth-child(last),
+EphyNotebook.notebook tab.top:nth-child(last),
+NautilusNotebook.notebook tab.top:nth-child(last):backdrop,
+EphyNotebook.notebook tab.top:nth-child(last):backdrop {
+    padding: 3px 16px 3px 16px;
+}
+
+NautilusNotebook.notebook tab.top:active,
+EphyNotebook.notebook tab.top:active,
+NautilusNotebook.notebook tab.top:active:backdrop,
+EphyNotebook.notebook tab.top:active:backdrop {
+    padding: 3px 16px 3px 16px;
+}
+
+NautilusNotebook.notebook tab.top:nth-child(first) *:active,
+EphyNotebook.notebook tab.top:nth-child(first) *:active,
+NautilusNotebook.notebook tab.top:nth-child(first) *:active:backdrop,
+EphyNotebook.notebook tab.top:nth-child(first) *:active:backdrop {
+    padding: 3px 16px 3px 16px;
+}
+
+NautilusNotebook.notebook tab.top:nth-child(last) *:active,
+EphyNotebook.notebook tab.top:nth-child(last) *:active,
+NautilusNotebook.notebook tab.top:nth-child(last) *:active:backdrop,
+EphyNotebook.notebook tab.top:nth-child(last) *:active:backdrop {
+    padding: 3px 16px 3px 16px;
+}
+
+
+/* top */
+NautilusNotebook.notebook tab.top,
+EphyNotebook.notebook tab.top {
+    border-image: url("assets/tab.svg") 7 9 9 9 / 7px 9px 9px 9px stretch;
+}
+
+NautilusNotebook.notebook tab.top:backdrop,
+EphyNotebook.notebook tab.top:backdrop {
+    border-image: url("assets/tab-backdrop.svg") 7 9 9 9 / 7px 9px 9px 9px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(last),
+EphyNotebook.notebook tab:nth-child(last)  {
+    border-image: url("assets/tab-last.svg") 7 9 9 9 / 7px 9px 9px 9px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(last):backdrop,
+EphyNotebook.notebook tab:nth-child(last):backdrop  {
+    border-image: url("assets/tab-last-backdrop.svg") 7 9 9 9 / 7px 9px 9px 9px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(first),
+EphyNotebook.notebook tab:nth-child(first) {
+    border-image: url("assets/tab-first.svg") 7 9 9 9 / 7px 9px 9px 9px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(first):backdrop,
+EphyNotebook.notebook tab:nth-child(first):backdrop {
+    border-image: url("assets/tab-first-backdrop.svg") 7 9 9 9 / 7px 9px 9px 9px stretch;
+}
+
+
+
+NautilusNotebook.notebook tab.top:active,
+EphyNotebook.notebook tab.top:active {
+    border-image: url("assets/tab-active.svg") 7 9 7 9 / 7px 9px 7px 9px stretch;
+}
+
+NautilusNotebook.notebook tab.top:active:backdrop,
+EphyNotebook.notebook tab.top:active:backdrop {
+    border-image: url("assets/tab-active-backdrop.svg") 7 9 7 9 / 7px 9px 7px 9px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(first):active,
+EphyNotebook.notebook tab:nth-child(first):active {
+    border-image: url("assets/tab-active-first.svg") 7 9 7 15 / 7px 9px 7px 15px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(first):backdrop:backdrop *:active,
+EphyNotebook.notebook tab:nth-child(first):backdrop:backdrop *:active {
+    border-image: url("assets/tab-active-backdrop-first.svg") 7 9 7 15 / 7px 9px 7px 15px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(last):active,
+EphyNotebook.notebook tab:nth-child(last):active {
+    border-image: url("assets/tab-active-last.svg") 7 15 7 9 / 7px 15px 7px 9px stretch;
+}
+
+NautilusNotebook.notebook tab:nth-child(last):backdrop:backdrop *:active,
+EphyNotebook.notebook tab:nth-child(last):backdrop:backdrop *:active {
+    border-image: url("assets/tab-active-backdrop-last.svg") 7 15 7 9 / 7px 15px 7px 9px stretch;
+}
+
+/* * Focused * */
+EphyNotebook.notebook tab.top:active:focus {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(shade(@theme_selected_bg_color, 0.9), 0.90),
+                                      alpha(shade(@theme_selected_bg_color, 0.9), 0.90)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+    box-shadow:  1px  1px alpha(black, 0.32) inset,
+				-1px -1px alpha(white, 0.04) inset;
+	}
+
+/*backdrop for active focus doesn't work!*******
+EphyNotebook.notebook tab.top:backdrop:backdrop:focus *:active,
+EphyNotebook.notebook tab:backdrop:backdrop:focus *:active {
+	background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      alpha(@theme_unfocused_selected_bg_color, 0.90),
+                                      alpha(@theme_unfocused_selected_bg_color, 0.90)
+                                      ),
+                      url("assets/delorean-dark-bg.png");
+    box-shadow:  none;
+	}*/
+
+/*****************
+ * Close Button **
+ * **************/
+.notebook tab .button,
+.notebook tab .button:active,
+.notebook tab .button:active:hover,
+.notebook tab .button:hover,
+NautilusNotebook.notebook tab .button,
+NautilusNotebook.notebook tab .button:active,
+NautilusNotebook.notebook tab .button:active:hover,
+NautilusNotebook.notebook tab .button:hover {
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 3px;
+    color: mix(@theme_fg_color, @theme_base_color, 0.6);
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    padding: 1px;
+    icon-shadow: 0 1px @button_text_shadow;
+    box-shadow: none;
+}
+/*
+.notebook tab .button:hover,
+NautilusNotebook.notebook tab .button:hover {
+	background-color: alpha(black, 0.12);
+    color: @theme_fg_color;
+    border-color: alpha(white, 0.09);
+}*/
+
+.notebook tab .button:hover,
+.notebook tab .button:active,
+.notebook tab .button:active:hover,
+NautilusNotebook.notebook tab .button:active,
+NautilusNotebook.notebook tab .button:active:hover,
+NautilusNotebook.notebook tab .button:hover {
+    background-color: alpha(black, 0.32);
+    box-shadow: inset 0 1px alpha(black, 0.16),
+				inset 0 2px alpha(black, 0.06),
+				inset 1px 0 alpha(black, 0.12),
+				inset 2px 0 alpha(black, 0.04);
+    color:  @error_color;
+    icon-shadow: -1px 0px alpha(black, 0.22),
+				0px -1px alpha(black, 0.34);
+    border-color: alpha(white, 0.05);
+    border-top-color: transparent;
+    border-left-color: transparent;
+}
+
+.notebook tab .button:backdrop,
+.notebook tab .button:backdrop:hover,
+NautilusNotebook.notebook tab .button:backdrop,
+NautilusNotebook.notebook tab .button:backdrop:hover {
+    color: mix(@theme_unfocused_fg_color, @theme_unfocused_base_color, 0.7);
+    icon-shadow: none;
+    border-image: none;
+    border-color: transparent;
+    background-image: none;
+    background-color: transparent;
+}
+
+.notebook tab .button:backdrop:hover,
+NautilusNotebook.notebook tab .button:backdrop:hover {
+    color: mix(@theme_unfocused_fg_color, @error_color, 0.6);
+    box-shadow: none;
+}
+
+/*****************
+ * Dialog        *
+ * Notebooks and *
+ * tabs		     *
+ *****************/
+ /*
+GtkDialog .notebook,
+GtkNotebook.notebook .notebook {
+	padding: 3px;
+
+	border-color:shade(@theme_base_color, 1.10);
+	border-style: solid;
+	border-width: 0px;
+
+	background-clip: border-box;
+	background-color: @notebook_color;
+	background-image: none;
+
+	box-shadow: 0 3px #2c2c2c inset,
+				0 -3px #2c2c2c inset;
+	-GtkNotebook-initial-gap: 0;
+	-GtkNotebook-arrow-spacing: 5;
+	-GtkNotebook-has-tab-gap: false;
+	-GtkNotebook-tab-overlap: -1;
+}
+
+GtkDialog .notebook tab,
+GtkDialog .notebook tab.top,
+GtkDialog .notebook tab:nth-child(first),
+GtkDialog .notebook tab:nth-child(last) {
+	border-image: url("borders/button/dialog-notebook.svg") 3 4 4 3 / 3px 4px 4px 3px stretch;
+    border-radius: 3px;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: transparent;
+
+	transition: 260ms ease-out;
+
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.11),
+                                      alpha(white, 0.0) 44%,
+                                      alpha(black, 0.0) 45%,
+                                      alpha(black, 0.24)
+                                      );
+	background-color: #282828 ;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset;
+
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.11),
+                                      alpha(white, 0.0) 44%,
+                                      alpha(black, 0.0) 45%,
+                                      alpha(black, 0.24)
+                                      ),
+                      url("assets/delorean-dark-bg.png");			
+}
+
+GtkDialog .notebook tab:active,
+GtkDialog .notebook tab.top:active,
+GtkDialog .notebook tab:nth-child(first):active,
+GtkDialog .notebook tab:nth-child(last):active {
+	border-image: url("borders/button/dialog-notebook.svg") 3 4 4 3 / 3px 4px 4px 3px stretch;
+    border-radius: 3px;
+    border-width: 1px 2px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+
+	transition: 260ms ease-out;
+
+	background-image: linear-gradient(to bottom,
+                                      alpha(white, 0.11),
+                                      alpha(white, 0.0) 39%,
+                                      alpha(black, 0.0) 40%,
+                                      alpha(black, 0.24)
+                                      );
+	background-color: mix(@theme_bg_color, @theme_selected_bg_color, 0.4);
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset;
+
+	
+
+}
+
+GtkDialog .notebook tab:nth-child(first),
+GtkDialog .notebook tab:nth-child(first):active {
+	border-image: url("borders/button/dialog-notebook-left.svg") 3 4 4 3 / 3px 4px 4px 3px stretch;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 2px alpha(black, 0.08) inset,
+				0 3px alpha(black, 0.04) inset,
+				0 4px alpha(black, 0.02) inset,
+
+				1px 0 alpha(black, 0.1) inset,
+				-1px 0 alpha(black, 0.1) inset,
+
+				2px 0 alpha(black, 0.04) inset,
+				-2px 0 alpha(black, 0.02) inset;
+}
+
+GtkDialog .notebook tab:nth-child(last),
+GtkDialog .notebook tab:nth-child(last):active {
+	border-image: url("borders/button/dialog-notebook-right.svg") 3 4 4 3 / 3px 4px 4px 3px stretch;
+}
+
+GtkDialog .notebook tab GtkLabel {
+    padding: 1px 14px 3px 6px;
+}
+
+*/
+
+
+
+
+
+
+	

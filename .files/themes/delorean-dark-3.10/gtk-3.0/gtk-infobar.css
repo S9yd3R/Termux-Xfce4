@@ -1,0 +1,568 @@
+/**************
+ * GtkInfoBar *
+ **************/
+GtkInfoBar,
+GtkInfoBar:backdrop {
+    border-width: 2px;
+    border-style: solid;
+    border-image: url("borders/frame.svg") 2 / 2px stretch;
+}
+
+.notebook GtkInfoBar,
+.notebook GtkInfoBar:backdrop {
+    border-width: 3px;
+    border-style: solid;
+    border-image: none;
+    box-shadow: none;
+}
+
+GtkInfoBar .entry {
+    border-image-source: url("borders/entry/ephy-entry.svg");
+    border-image-width: 3px 3px 4px 3px;
+}
+
+GtkInfoBar .entry:focus {
+    border-image-source: url("borders/entry/ephy-entry-focus.svg");
+	background-color: #1c1c1c;
+	background-image: none;
+}
+
+GtkInfoBar .entry:selected,
+GtkInfoBar .entry:focus:selected {
+	color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+}
+
+/************
+ *   Info   *
+ * **********/
+.info {
+    background-color: @info_color;
+    color: shade(@info_color, 0.5);
+    text-shadow: 0 1px @infobar_text_shadow;
+    border-color: darker(@info_color);
+    box-shadow: -2px 2px darker(@info_color) inset,
+				2px -2px darker(@info_color) inset;
+}
+
+.info:backdrop {
+    text-shadow: none;
+    background-color: darker(@info_color);
+    color: @info_color;
+    border-color: shade(@info_color, 0.95);
+}
+
+.info .button.close {
+    color: shade(@info_color, 0.5);
+    icon-shadow: 0 1px @infobar_text_shadow;
+}
+
+.info .button.close:hover {
+    color: shade(@info_color, 0.63);
+}
+
+.info .button.close:active {
+    color: shade(@question_color, 1.6);
+    background-image: linear-gradient(to bottom,
+				      alpha(black, 0.1),
+				      transparent);
+}
+
+.info .button.close:backdrop {
+    color: @theme_unfocused_fg_color;
+    icon-shadow: none;
+}
+
+.info .button.close:backdrop:hover {
+    background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
+.info .button,
+.info GtkComboBox*,
+.info .button:hover,
+.info .button:insensitive,
+.info .button:backdrop,
+.info .button:backdrop:hover,
+.info .button:insensitive:backdrop,
+.info .button:active:backdrop,
+.info GtkComboBox*:backdrop,
+.info .button:active,
+.info .button:active:hover,
+.info .button.default,
+.info .button.default:hover,
+.info .button.default:insensitive,
+.info .button.default:active,
+.info .button.default:active:hover,
+.info .button.default:backdrop,
+.info .button.default:hover:backdrop,
+.info .button.default:insensitive:backdrop {
+	color: shade(@info_color, 1.4);
+	border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+	border-image: none;
+	
+    border-color: shade(@info_color, 0.5);
+    border-bottom-color: shade(@info_color, 0.4);
+    border-right-color: shade(@info_color, 0.43);
+    
+    background-image: none;
+    background-color: shade(@info_color, 0.5);
+    
+    box-shadow: 0 1px alpha(white, 0.01) inset,
+				0 2px alpha(white, 0.005) inset,
+				0 -1px alpha(white, 0.01) inset;
+}
+
+.info .button.default,
+.info .button.default:hover,
+.info .button.default:insensitive {
+	color: shade(@info_color, 1.45);
+	box-shadow: -1px  1px shade(@info_color, 0.76) inset,
+				 0px  2px alpha(white, 0.005) inset,
+				 1px -1px shade(@info_color, 0.76) inset;
+}
+
+.info .button *:insensitive {
+	color: darker(@info_color);
+}
+
+.info .button.default:active,
+.info .button.default:active:hover {
+	border-image: none;
+    color: shade(@info_color, 1.6);
+    text-shadow: -1px -1px alpha(black, 0.2);
+    border-color: shade(mix(shade(@info_color, 0.5), white, 0.4), 0.70);
+    background-color:  shade(mix(shade(@info_color, 0.5), black, 0.14), 0.90);
+}
+
+.info .button:backdrop,
+.info .button:backdrop:hover,
+.info .button *:insensitive:backdrop,
+.info .button:insensitive:backdrop,
+.info .button:active:backdrop,
+.info GtkComboBox*:backdrop {
+    border-image: none;
+	color: shade(@info_color, 0.75);
+    text-shadow: none;
+	box-shadow: none;	
+}
+
+.info .button.default:backdrop,
+.info .button.default:hover:backdrop,
+.info .button.default:insensitive:backdrop {
+	border-image: none;
+    text-shadow: none;
+    color: shade(@info_color, 0.78);
+	box-shadow: -1px  1px shade(@info_color, 0.62) inset,
+				 1px -1px shade(@info_color, 0.62) inset;
+}
+
+.question .button *:insensitive:backdrop,
+.question .button.default *:insensitive:backdrop {
+	color: darker(shade(@info_color, 0.85));
+}
+
+/******************
+ *  Warning Bar   *
+ ******************/
+
+.warning {
+    background-color: @warning_color;
+    color: shade(@warning_color, 0.5);
+    text-shadow: 0 1px @infobar_text_shadow;
+    border-color: darker(@warning_color);
+    box-shadow: -2px 2px darker(@warning_color) inset,
+				2px -2px darker(@warning_color) inset;
+}
+
+.warning:backdrop {
+    text-shadow: none;
+    background-color: darker(@warning_color);
+    color: @warning_color;
+    border-color: shade(@warning_color, 0.95);
+}
+
+.warning .button.close {
+    color: shade(@warning_color, 0.5);
+    icon-shadow: 0 1px @infobar_text_shadow;
+}
+
+.warning .button.close:hover {
+    color: shade(@warning_color, 0.63);
+}
+
+.warning .button.close:active {
+    color: shade(@warning_color, 1.6);
+    background-image: linear-gradient(to bottom,
+				      alpha(black, 0.1),
+				      transparent);
+}
+
+.warning .button.close:backdrop {
+    color: @theme_unfocused_fg_color;
+    icon-shadow: none;
+}
+
+.warning .button.close:backdrop:hover {
+    background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.warning .button,
+.warning GtkComboBox*,
+.warning .button:hover,
+.warning .button:insensitive,
+.warning .button:backdrop,
+.warning .button:backdrop:hover,
+.warning .button:insensitive:backdrop,
+.warning .button:active:backdrop,
+.warning GtkComboBox*:backdrop,
+.warning .button:active,
+.warning .button:active:hover,
+.warning .button.default,
+.warning .button.default:hover,
+.warning .button.default:insensitive,
+.warning .button.default:active,
+.warning .button.default:active:hover,
+.warning .button.default:backdrop,
+.warning .button.default:hover:backdrop,
+.warning .button.default:insensitive:backdrop {
+	color: shade(@warning_color, 1.4);
+	border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+	border-image: none;
+	
+    border-color: shade(@warning_color, 0.5);
+    border-bottom-color: shade(@warning_color, 0.4);
+    border-right-color: shade(@warning_color, 0.43);
+    
+    background-image: none;
+    background-color: shade(@warning_color, 0.5);
+    
+    box-shadow: 0 1px alpha(white, 0.01) inset,
+				0 2px alpha(white, 0.005) inset,
+				0 -1px alpha(white, 0.01) inset;
+}
+
+.warning .button.default,
+.warning .button.default:hover,
+.warning .button.default:insensitive {
+	color: shade(@warning_color, 1.45);
+	box-shadow: -1px  1px shade(@warning_color, 0.76) inset,
+				 0px  2px alpha(white, 0.005) inset,
+				 1px -1px shade(@warning_color, 0.76) inset;
+}
+
+.warning .button *:insensitive {
+	color: darker(@warning_color);
+}
+
+.warning .button.default:active,
+.warning .button.default:active:hover {
+	border-image: none;
+    color: shade(@warning_color, 1.6);
+    text-shadow: -1px -1px alpha(black, 0.2);
+    border-color: shade(mix(shade(@warning_color, 0.5), white, 0.4), 0.70);
+    background-color:  shade(mix(shade(@warning_color, 0.5), black, 0.14), 0.90);
+}
+
+.warning .button:backdrop,
+.warning .button:backdrop:hover,
+.warning .button *:insensitive:backdrop,
+.warning .button:insensitive:backdrop,
+.warning .button:active:backdrop,
+.warning GtkComboBox*:backdrop {
+    border-image: none;
+	color: shade(@warning_color, 0.75);
+    text-shadow: none;
+	box-shadow: none;
+}
+
+.warning .button.default:backdrop,
+.warning .button.default:hover:backdrop,
+.warning .button.default:insensitive:backdrop {
+	border-image: none;
+    text-shadow: none;
+    color: shade(@warning_color, 0.78);
+	box-shadow: -1px  1px shade(@warning_color, 0.62) inset,
+				 1px -1px shade(@warning_color, 0.62) inset;
+}
+
+.question .button *:insensitive:backdrop,
+.question .button.default *:insensitive:backdrop {
+	color: darker(shade(@warning_color, 0.85));
+}
+
+/*********
+ * error *
+ * *******/
+
+.error {
+    background-color: @error_color;
+    color: shade(@error_color, 0.5);
+    text-shadow: 0 1px @infobar_text_shadow;
+    border-color: darker(@error_color);
+    box-shadow: -2px 2px darker(@error_color) inset,
+				2px -2px darker(@error_color) inset;
+}
+
+.error:backdrop {
+    text-shadow: none;
+    background-color: darker(@error_color);
+    color: @error_color;
+    border-color: shade(@error_color, 0.95);
+}
+
+.error .button.close {
+    color: shade(@error_color, 0.5);
+    icon-shadow: 0 1px @infobar_text_shadow;
+}
+
+.error .button.close:hover {
+    color: shade(@error_color, 0.63);
+}
+
+.error .button.close:active {
+    color: shade(@error_color, 1.6);
+    background-image: linear-gradient(to bottom,
+				      alpha(black, 0.1),
+				      transparent);
+}
+
+.error .button.close:backdrop {
+    color: @theme_unfocused_fg_color;
+
+    icon-shadow: none;
+}
+
+.error .button.close:backdrop:hover {
+    background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.error .button,
+.error GtkComboBox*,
+.error .button:hover,
+.error .button:insensitive,
+.error .button:backdrop,
+.error .button:backdrop:hover,
+.error .button:insensitive:backdrop,
+.error .button:active:backdrop,
+.error GtkComboBox*:backdrop,
+.error .button:active,
+.error .button:active:hover,
+.error .button.default,
+.error .button.default:hover,
+.error .button.default:insensitive,
+.error .button.default:active,
+.error .button.default:active:hover,
+.error .button.default:backdrop,
+.error .button.default:hover:backdrop,
+.error .button.default:insensitive:backdrop {
+	color: shade(@error_color, 1.4);
+	border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+	border-image: none;
+	
+    border-color: shade(@error_color, 0.5);
+    border-bottom-color: shade(@error_color, 0.4);
+    border-right-color: shade(@error_color, 0.43);
+    
+    background-image: none;
+    background-color: shade(@error_color, 0.5);
+    
+    box-shadow: 0 1px alpha(white, 0.01) inset,
+				0 2px alpha(white, 0.005) inset,
+				0 -1px alpha(white, 0.01) inset;
+}
+
+.error .button.default,
+.error .button.default:hover,
+.error .button.default:insensitive {
+	color: shade(@error_color, 1.45);
+	box-shadow: -1px  1px shade(@error_color, 0.76) inset,
+				 0px  2px alpha(white, 0.005) inset,
+				 1px -1px shade(@error_color, 0.76) inset;
+}
+
+.error .button *:insensitive {
+	color: darker(@error_color);
+}
+
+.error .button.default:active,
+.error .button.default:active:hover
+ {
+	border-image: none;
+    color: shade(@error_color, 1.6);
+    text-shadow: -1px -1px alpha(black, 0.2);
+    border-color: shade(mix(shade(@error_color, 0.5), white, 0.4), 0.70);
+    background-color:  shade(mix(shade(@error_color, 0.5), black, 0.14), 0.90);
+}
+
+.error .button:backdrop,
+.error .button:backdrop:hover,
+.error .button:insensitive:backdrop,
+.error .button:active:backdrop,
+.error GtkComboBox*:backdrop {
+    border-image: none;
+	color: shade(@error_color, 0.75);
+    text-shadow: none;
+	box-shadow: none;
+}
+
+.error .button.default:backdrop,
+.error .button.default:hover:backdrop,
+.error .button.default:insensitive:backdrop {
+		border-image: none;
+    text-shadow: none;
+    color: shade(@error_color, 0.78);
+	box-shadow: -1px  1px shade(@error_color, 0.62) inset,
+				 1px -1px shade(@error_color, 0.62) inset;
+}
+
+.question .button *:insensitive:backdrop,
+.question .button.default *:insensitive:backdrop {
+	color: darker(shade(@error_color, 0.85));
+}
+
+/************
+ * Question *
+ * **********/
+
+.question {
+    background-color: @question_color;
+    color: shade(@question_color, 0.5);
+    text-shadow: 0 1px @infobar_text_shadow;
+    border-color: darker(@question_color);
+    box-shadow: -2px 2px darker(@question_color) inset,
+				2px -2px darker(@question_color) inset;
+}
+
+.question:backdrop {
+    text-shadow: none;
+    background-color: darker(@question_color);
+    color: @question_color;
+    border-color: shade(@question_color, 0.95);
+}
+
+.question .button.close {
+    color: shade(@question_color, 0.5);
+    icon-shadow: 0 1px @infobar_text_shadow;
+}
+
+.question .button.close:hover {
+    color: shade(@question_color, 0.63);
+}
+
+.question .button.close:active {
+    color: shade(@question_color, 1.6);
+    background-image: linear-gradient(to bottom,
+				      alpha(black, 0.1),
+				      transparent);
+}
+
+.question .button.close:backdrop {
+    color: @theme_unfocused_fg_color;
+    icon-shadow: none;
+}
+
+.question .button.close:backdrop:hover {
+    background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.question .button,
+.question GtkComboBox*,
+.question .button:hover,
+.question .button:insensitive,
+.question .button:backdrop,
+.question .button:backdrop:hover,
+.question .button:insensitive:backdrop,
+.question .button:active:backdrop,
+.question GtkComboBox*:backdrop,
+.question .button:active,
+.question .button:active:hover,
+.question .button.default,
+.question .button.default:hover,
+.question .button.default:insensitive,
+.question .button.default:active,
+.question .button.default:active:hover,
+.question .button.default:backdrop,
+.question .button.default:hover:backdrop,
+.question .button.default:insensitive:backdrop {
+	color: shade(@question_color, 1.4);
+	border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+	border-image: none;
+	
+    border-color: shade(@question_color, 0.5);
+    border-bottom-color: shade(@question_color, 0.4);
+    border-right-color: shade(@question_color, 0.43);
+    
+    background-image: none;
+    background-color: shade(@question_color, 0.5);
+    
+    box-shadow: 0 1px alpha(white, 0.01) inset,
+				0 2px alpha(white, 0.005) inset,
+				0 -1px alpha(white, 0.01) inset;
+}
+
+.question .button.default,
+.question .button.default:hover,
+.question .button.default:insensitive {
+	color: shade(@question_color, 1.45);
+	box-shadow: -1px  1px shade(@question_color, 0.76) inset,
+				 0px  2px alpha(white, 0.005) inset,
+				 1px -1px shade(@question_color, 0.76) inset;
+}
+
+.question .button *:insensitive {
+	color: darker(@question_color);
+}
+
+.question .button.default:active,
+.question .button.default:active:hover
+ {
+	border-image: none;
+    color: shade(@question_color, 1.6);
+    text-shadow: -1px -1px alpha(black, 0.2);
+    border-color: shade(mix(shade(@question_color, 0.5), white, 0.4), 0.70);
+    background-color:  shade(mix(shade(@question_color, 0.5), black, 0.14), 0.90);
+}
+
+.question .button:backdrop,
+.question .button:backdrop:hover,
+.question .button *:insensitive:backdrop,
+.question .button:insensitive:backdrop,
+.question .button:active:backdrop,
+.question GtkComboBox*:backdrop {
+    border-image: none;
+	color: shade(@question_color, 0.75);
+    text-shadow: none;
+	box-shadow: none;	
+}
+
+.question .button.default:backdrop,
+.question .button.default:hover:backdrop,
+.question .button.default:insensitive:backdrop {
+	border-image: none;
+    text-shadow: none;
+    color: shade(@question_color, 0.78);
+	box-shadow: -1px  1px shade(@question_color, 0.62) inset,
+				 1px -1px shade(@question_color, 0.62) inset;
+}
+
+.question .button *:insensitive:backdrop,
+.question .button.default *:insensitive:backdrop {
+	color: darker(shade(@question_color, 0.85));
+}
